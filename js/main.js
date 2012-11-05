@@ -108,7 +108,7 @@
   // some cleanup in pivot
   self.cleanUp = function() {
     $('body h2').each(function(idx, elem) {
-      if($(elem).html() == "Label Fields" || 
+      if($(elem).html() == "Label Fields" ||
         $(elem).html() == "Summary Fields") {
 
         $(elem).remove();
@@ -124,7 +124,7 @@
     $('#ajax-loader').show();
     $('.news-item-wrapper').remove();
     jQuery.getFeed({
-      url: 'feed.php',
+      url: 'feeds',
       success: function(feed) {
         $('#ajax-loader').hide();
         var template = _.template($('#news-item-template').html());
