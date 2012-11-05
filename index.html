@@ -141,6 +141,15 @@
 
           <div id="news-container" style="display: none;" class="content">
             <h2> News</h2>
+            <div id="feeds">
+              <img src="img/ajax-loader.gif" id="ajax-loader">
+            </div>
+            <script type="text/template" id="news-item-template">
+              <div class="news-item-wrapper">
+                <div class="news-title"><%= title %></div>
+                <a href="<%= link %>">Read More</a>
+              </div>
+            </script>
           </div>
 
           <div id="research-container" style="display: none;" class="content">
@@ -216,6 +225,7 @@
 
         <script src="js/leaflet.js"></script>
         <script src="js/treemap.js"></script>
+        <script src="js/jquery.jfeed.js"></script>
         <script src="js/main.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

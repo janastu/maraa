@@ -297,13 +297,6 @@ textarea {
     }
 }
 
-body {
-	/*font: Arial, Helvetica, sans-serif normal 10px;*/
-	margin: 0; padding: 0;
-}
-
-* {margin: 0; padding: 0;}
-
 #container {
   width: 900px;
   margin: 0 auto;
@@ -333,4 +326,23 @@ body {
  
 .menu ul li a:visited {
     color: #FF6633;
+}
+
+#feeds {
+  width: 500px;
+  height: 500px;
+  border: 1px solid #999;
+  overflow-y: scroll;
+}
+
+.news-item-wrapper {
+  padding: 3px;
+  margin: 5px;
+}
+
+#ajax-loader {
+  display: none;
+  position: relative;
+  top: 240px;
+  left: 240px;
 }

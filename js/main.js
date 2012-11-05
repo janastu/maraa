@@ -1,6 +1,7 @@
 (function(M) {
   var self = M;
 
+  // Backbone router for client side routing
   var AppRouter = Backbone.Router.extend({
     routes: {
       'index'     : "index",
@@ -20,6 +21,7 @@
     news: function() {
       $('.content').hide();
       $('#news-container').show();
+      self.populateFeeds();
     },
     research: function() {
       $('.content').hide();
@@ -51,6 +53,7 @@
     }
   });
 
+  // initialize
   self.init = function() {
     $('ul.thumb li').Zoomer({speedView:200,speedRemove:400,
       altAnim:true,speedTitle:400,debug:false});
@@ -59,6 +62,7 @@
     Backbone.history.start();
   };
 
+  // draw pivot table
   self.pivotTable = function() {
     $('.content').hide();
     $('#research-container').show();
@@ -66,6 +70,7 @@
     self.drawPivot();
   };
 
+  // draw pivot table from the survey data
   self.drawPivot = function() {
     var formatPercent = function(value) {
       return value + ' %';
@@ -95,17 +100,12 @@
       filters: {'Radio Station': 'Gurgaon Ki Awaz', Demographic: 'Age'},
       rowLabels: row_labels,
     };
-    if(pivot) {
-      console.log('initing pivot');
-      if(!$('#pivot-container').html().length) {
-        $('#pivot-container').pivot_display('setup', options);
-      }
-    }
-    else {
-      console.log('pivot.js not loaded');
+    if(pivot && !$('#pivot-container').html().length) {
+      $('#pivot-container').pivot_display('setup', options);
     }
   };
 
+  // some cleanup in pivot
   self.cleanUp = function() {
     $('body h2').each(function(idx, elem) {
       if($(elem).html() == "Label Fields" || 
@@ -115,6 +115,26 @@
       }
       $('#summary-fields').remove();
       $('#label-fields').remove();
+    });
+  };
+
+  // populate with news feeds in the news section
+  // gets the feeds from server side script 'feed.php'
+  self.populateFeeds = function() {
+    $('#ajax-loader').show();
+    $('.news-item-wrapper').remove();
+    jQuery.getFeed({
+      url: 'feed.php',
+      success: function(feed) {
+        $('#ajax-loader').hide();
+        var template = _.template($('#news-item-template').html());
+        _.each(feed.items, function(item) {
+          $('#feeds').append(template({
+            title: item.title,
+            link: item.link
+          }));
+        });
+      }
     });
   };
 })(M);

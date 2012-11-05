@@ -1,5 +1,8 @@
 (function(M) {
   M.drawMap = function() {
+    if($('#map').html().length > 1000) {
+      return;
+    }
     var map = L.map('map').setView([12.9725, 77.58443],4);
     L.tileLayer('http://{s}.tile.cloudmade.com/157f9082094e402f89d242e9b9144483/997/256/{z}/{x}/{y}.png', {
       maxZoom: 18,
