@@ -119,7 +119,7 @@
   };
 
   // populate with news feeds in the news section
-  // gets the feeds from server side script 'feed.php'
+  // gets the feeds from server side script 'feed.py'
   self.populateFeeds = function() {
     $('#ajax-loader').show();
     $('.news-item-wrapper').remove();
@@ -137,7 +137,7 @@
       },
       error: function(err) {
         $('#ajax-loader').hide();
-        $('#feeds').append('Oops, something went wrong! <br/> Please try again.');;
+        $('#feeds').append('Oops, something went wrong! <br/> Please try again.');
       }
     });
   };
