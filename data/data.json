@@ -1,0 +1,39 @@
+{
+"name":"Community radio",
+"children":[{
+				"name":"programs",
+				"children":[
+				{"name":"Sources of programs","size":	15},
+				{"name":"Production","size":15},
+				{"name":"Technology","size":15},
+				{"name":"Remote conferencing","size":	15}]
+				},
+				{"name":"Media",
+				"children":[
+				{"name":"Community radio","size":"15"},
+				{"name":"Animation","size":15},
+				{"name":"Other","size":15}]
+				},
+				{"name":"Finance",
+				"children":[
+				{"name":"List of possible actors, financers","size":15},
+				{"name":"How does money flow within the station","size":15}]
+				},
+				{"name":"Organization",
+				"children":[
+				{"name":"Diagram represntation","size":15},
+				{"name":"Structure of the station","size":15},
+				{"name":"Comment","size":15}]
+				},
+				{"name":"Setting up",
+				"children":[
+				{"name":"Permits","size":15},
+				{"name":"Infrastructure","size":15}]
+				},
+				{"name":"Audience",
+				"children":[
+				{"name":"Demographics","size":15},
+				{"name":"Individual","size":15}]
+				}
+]
+}
