@@ -9,7 +9,8 @@
       'resource'  : "resource",
       'directory' : "directory",
       'media'     : "media",
-      'contact'   : "contact"
+      'contact'   : "contact",
+      'station/:x': "station"
     },
 
     index: function() {
@@ -23,7 +24,8 @@
     research: function() {
       $('.content').hide();
       $('#research-container').show();
-      self.drawPivot();
+      $('#map-container').show();
+      self.drawMap();
     },
     resource: function() {
       $('.content').hide();
@@ -40,15 +42,28 @@
     contact: function() {
       $('.content').hide();
       $('#contact-container').show();
+    },
+    station: function(x) {
+      $('.content').hide();
+      $('#research-container').show();
+      $('#treemap-container').show();
+      self.drawTreemap(x);
     }
   });
 
   self.init = function() {
     $('ul.thumb li').Zoomer({speedView:200,speedRemove:400,
       altAnim:true,speedTitle:400,debug:false});
-    //$('#index, #resource, #news, #research').click(this.toggleMenu);
+
     var app_router = new AppRouter();
     Backbone.history.start();
+  };
+
+  self.pivotTable = function() {
+    $('.content').hide();
+    $('#research-container').show();
+    $('#pivot-wrapper').show();
+    self.drawPivot();
   };
 
   self.drawPivot = function() {

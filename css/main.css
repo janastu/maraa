@@ -314,8 +314,10 @@ body {
   margin-top: 30px;
 }
 .menu ul{
-    margin: 0; padding: 0;
-    float: left;}
+  margin: 0 0 0 90px;
+  padding: 0;
+  float: left;
+}
  
 .menu ul li{
   display: inline;
