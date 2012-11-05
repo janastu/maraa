@@ -19,7 +19,7 @@ ul.thumb1 {
 
  ul.thumb1 li img {
     width: 100px;
-    height: 100px;
+    height: 80px;
     /*border: 1px solid #ddd;*/
     padding: 5px;
     background: #f0f0f0;
@@ -56,13 +56,13 @@ ul.thumb {
 
  ul.thumb li img {
     width: 100px;
-    height: 100px;
+    height: 80px;
     /*border: 1px solid #ddd;*/
     padding: 5px;
     background: #f0f0f0;
     position: absolute;
     left: 0;
-    top: 0; 
+    top: 26px;
     color:#000;
     -ms-interpolation-mode: bicubic;
 }

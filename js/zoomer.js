@@ -47,8 +47,8 @@
                     marginLeft: '-110px',
                     top: '50%',
                     left: '50%',
-                    width: '175px',
-                    height: '181px',
+                    width: '180px',
+                    height: '180px',
                     padding: '20px'
                 }, d.speedView);
                 if (d.altAnim == true) {
@@ -72,10 +72,10 @@
                 $(this).find('img').removeClass("hover").stop().animate({
                     marginTop: '0',
                     marginLeft: '0',
-                    top: '0',
+                    top: '26px',
                     left: '0',
                     width: '100px',
-                    height: '100px',
+                    height: '80px',
                     padding: '5px'
                 }, d.speedRemove);
                 $(this).find('.title').remove()

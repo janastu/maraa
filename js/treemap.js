@@ -11,6 +11,7 @@ var tmap = d3.layout.treemap()
   .sticky(true)
   .value(function(d){return d.size;});
 
+$('#tmap').html('');
 var div = d3.select("#tmap").append("div")
   .style("position","relative")
   .style("width",width+"px")
