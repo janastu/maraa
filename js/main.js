@@ -134,6 +134,10 @@
             link: item.link
           }));
         });
+      },
+      error: function(err) {
+        $('#ajax-loader').hide();
+        $('#feeds').append('Oops, something went wrong! <br/> Please try again.');;
       }
     });
   };
