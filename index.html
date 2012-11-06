@@ -22,7 +22,6 @@
         <link rel="stylesheet" href="css/pivot.css">
         <link rel="stylesheet" href="css/treemap.css">
         <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4.4/leaflet.css"/>
-	<link rel="stylesheet" href="css/timeline.css" />
         <script src="js/vendor/modernizr-2.6.1.min.js"></script>
     </head>
     <body>
@@ -160,6 +159,8 @@
               >> The collected data, about the existing community
               radio stations in India, has been analysed and is being presented for others to visualize. <<
             </div>
+            <p><a href="#/timeline" class="module">Events Timeline</a></p>
+            <p><a href="#/pivot" class="module">Pivot Table</a></p>
             
             <div class="container content" id="map-container" style="display: none;">
               <div class="description">
@@ -175,7 +176,6 @@
 
             <div class="content" id="treemap-container" style="display: none;">
               <div class="description">The following treemap gives detailed information about the various aspects of a radio station.</div>
-              <p><b><a href="#/pivot/" onclick="M.pivotTable();">Pivot Table</a></b></p>
               <div id="tmap"></div>
             </div>
 
@@ -190,17 +190,20 @@
               <div class="clearfix" style="clear:both;"></div>
               <div id="results"></div>
             </div>
+
+            
             <div id="timeline-container" style="display:none;" class="content">
-	      <div id="header">
-    		<h1>MARAA-CR-EVENTS TIMELINE</h1>
-	      </div>
-	      <div id="main_content">
-		<p>The objective is 'To educate our peers in the community radio sector, on the access and rights issues involved in the digital media space, as media users themselves and for their communities/listeners.' The timeline below brings up the information regarding the digital media over the periods.</p>
-	      </div><br/>
-	      <div id="my-timeline" style="height: 150px;  border: 1px solid #aaa; width:90%; margin: 0px auto;">
-	      </div>
-	    </div>
-	  </div>
+              <div class="heading">
+                <h2> Events Timeline </h2>
+              </div>
+              <div id="timeline-content">
+                The objective is 'To educate our peers in the community radio sector, on the access and rights issues involved
+                in the digital media space, as media users themselves and for their communities/listeners.' 
+                The timeline below brings up the information regarding the digital media over the periods
+              </div>
+              <div id="my-timeline" style="height: 150px;  border: 1px solid #aaa; width:90%; margin: 0px auto;"></div>
+            </div>
+	        </div>
 	  
           <div id="resource-directory-container" style="display: none;" class="content">
             <h2> Resource Directory </h2>

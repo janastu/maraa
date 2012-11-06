@@ -478,3 +478,24 @@ textarea {
   font-size: 15px;
   font-weight: bold;
 }
+h2 {
+  text-align: center;
+}
+
+#timeline-container {
+  margin-top: 50px;
+}
+#timeline-content {
+  width: 90%;
+  margin: 0 auto;
+  padding: 0px;
+}
+
+.module {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
