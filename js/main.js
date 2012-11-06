@@ -7,8 +7,7 @@
       'index'     : "index",
       'news'      : "news",
       'research'  : "research",
-      'resource'  : "resource",
-      'directory' : "directory",
+      'resource-directory'  : "resource_directory",
       'media'     : "media",
       'contact'   : "contact",
       'station/:x': "station"
@@ -29,13 +28,9 @@
       $('#map-container').show();
       self.drawMap();
     },
-    resource: function() {
+    resource_directory: function() {
       $('.content').hide();
-      $('#resource-container').show();
-    },
-    directory: function() {
-      $('.content').hide();
-      $('#directory-container').show();
+      $('#resource-directory-container').show();
     },
     media: function() {
       $('.content').hide();
