@@ -136,4 +136,6 @@
       }
     });
   };
+
+  self.resource_directory = [];
 })(M);

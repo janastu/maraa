@@ -175,12 +175,9 @@
 
           <div id="resource-directory-container" style="display: none;" class="content">
             <h2> Resource Directory </h2>
-            <div class="leaf">
-              <div class="text"></div>
-              <hr>
-              <div class="img"></div>
-            </div>
+            
           </div>
+            
 
           <div id="media-container" style="display: none;" class="content">
             <h2> Media </h2>
@@ -204,6 +201,13 @@
         </div>
 
 
+        <script type="text/template" id="leaf-template">
+          <div class="leaf">
+            <div class="text"><%= text%></div>
+            <hr>
+            <div class="img"><img src="<%= img %>"/></div>
+          </div>
+        </script>
         <script>
           window.M = window.M || {};
         </script>
