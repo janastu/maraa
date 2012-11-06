@@ -3,10 +3,15 @@
 NOTE: Relatedness and tags of the images are yet to be defined.
 
 * News
-** The feeds of various people mentioned by Ram earleier are aggregated using newsrack.  Newsrack is a website which helps in assimalting feeds and gives out a RSS url*** Map: It helps in presenting the location of the 5 various radio station on the map of India.
-*** Pivot table: A table which can be filtered down by various fields set by a end user.  This helps in visualizing the survey data about the demographics.
+** The feeds of various people mentioned by Ram earlier are aggregated using newsrack.  Newsrack is a website which helps in assimalting feeds and gives out a RSS url.
+The news feeds are collected and displayed in the news section.
+
+* Research
+** The Research section contains various visualisations of the analysis of the collected data of various radio stations.
+*** Map: It helps in presenting the location of the 5 various radio station on the map of India.
 *** Treemap: Useful for navigating various ascpects of a radio station.  Helps visualizing the various actors involved in a station.
-*** Timeline: Helps in visualizing the events in a chronological order. 
+*** Pivot table: A tabular way to visualize the survey data about demographics of various community radio stations. Various fields can be filtered to compare and see different data sets.
+*** Timeline: Helps in visualizing the events related to digital media in a chronological order. 
 NOTE: Ram please give more pictures of the radio stations to put on the map, also please give content on what has to go into every radio station's treemap.
 
 * Resource directory
