@@ -339,11 +339,16 @@ textarea {
 /*   margin: 5px; */
 /* } */
 
-#ajax-loader {
+#feeds-loader {
   display: none;
   position: relative;
   top: 240px;
   left: 500px;
+}
+#menu-loader {
+  position: relative;
+  left: 500px;
+  top: 30px;
 }
 
 .leaf {

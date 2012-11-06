@@ -71,6 +71,8 @@
 
     var app_router = new AppRouter();
     Backbone.history.start();
+    $('#menu-loader').hide();
+    $('.menu').show();
   };
 
   // draw pivot table

@@ -144,7 +144,7 @@
               Latest news from newsrack.in
             </div>
             <div id="feeds">
-              <img src="img/ajax-loader.gif" id="ajax-loader">
+              <img src="img/ajax-loader.gif" id="feeds-loader">
             </div>
             <script type="text/template" id="news-item-template">
               <div class="news-item-wrapper">
@@ -176,8 +176,7 @@
 
             <div class="content" id="treemap-container" style="display: none;">
               <div class="description">The following treemap gives detailed information about the various aspects of a radio station.</div>
-	      <p><b>As discussed with Dinesh/Shruti, the content for populating the links in the treemap has to be provided for.</b></p>
-              <p><b><a href="#/pivot/" onclick="M.pivotTable();">Pivot Table</a></b></p>
+              <div class="description"> NOTE: As discussed with Dinesh/Shruti, the content for populating the links in the treemap has to be provided for.</div>
               <div id="tmap"></div>
             </div>
 
@@ -225,7 +224,8 @@
             <p> TODO: Relevant contact details to come up here</p>
           </div>
 
-          <div class="menu" class="navigation">
+          <img src="img/ajax-loader.gif" class="ajax-loader" id="menu-loader">
+          <div class="menu" class="navigation" style="display: none;">
             <ul class="font">
               <li><a href="#/index">Index</a></li>
               <li><a href="#/news">News</a></li>
