@@ -298,7 +298,7 @@ textarea {
 }
 
 #container {
-  width: 900px;
+  width: 1070px;
   margin: 0 auto;
 }
 
@@ -307,7 +307,7 @@ textarea {
   margin-top: 30px;
 }
 .menu ul{
-  margin: 0 0 0 90px;
+  margin: 0 0 0 180px;
   padding: 0;
   float: left;
 }
@@ -333,6 +333,7 @@ textarea {
   height: auto;
 }
 
+
 /* .news-item-wrapper { */
 /*   padding: 3px; */
 /*   margin: 5px; */
@@ -342,20 +343,116 @@ textarea {
   display: none;
   position: relative;
   top: 240px;
-  left: 240px;
+  left: 500px;
 }
 
 .leaf {
+  height: auto;
   width: 300px;
-  height: 300px;
   border: 2px solid #DDD;
   box-shadow: 0 8px 6px -6px #aaa;
   -moz-box-shadow: 0 8px 6px -6px #aaa;
   -webkit-box-shadow: 0 8px 6px -6px #aaa;
+  margin: 20px;
+  padding: 5px;
+  float: left;
+}
+
+.leaf .text, #popup-box .text {
+  font: bold 15px/17px 'Helvetica Neue', Helvetica, sans-serif;
+  margin: 5px;
+  margin-bottom: 10px;
+}
+.leaf a {
+  font-size: 12px;
+  font-weight: normal;
+  margin-top: 10px;
+  float: right;
+}
+
+.leaf .img img {
+  margin: auto 0;
+}
+
+.leaf:hover {
+  cursor: pointer;
+  -moz-transition: box-shadow 500ms ease 0s;
+  -webkit-transition:box-shadow 500ms ease 0s;
+  box-shadow: 0 0 20px #000;
+  -moz-box-shadow: 0 0 20px #000;
+  -webkit-box-shadow: 0 0 20px #000;
+}
+
+#overlay {
+  width: 1400px;
+  height: 10000px;
+  opacity: 0.3;
+  background-color: #000;
+  display: none;
+  z-index: 500;
+}
+
+#popup-box {
+  position: absolute;
+  left: 300px;
+  top: 0;
+  background-color: white;
+  border: 2px solid #DDD;
+  box-shadow: 0 0 10px #000;
+  -moz-box-shadow: 0 0 10px #000;
+  -webkit-box-shadow: 0 0 10px #000;
+}
+#popup-box .content {
+  margin: 30px;
+  padding: 5px;
+  border: 1px solid #DDD;
+}
+#popup-box .close {
+  text-decoration: none;
+  opacity: 1;
+  float: right;
+  right: 0px;
+  top: 0px;
+  position: relative;
+  padding: 0 5px;
+  background: url('../img/close.png') no-repeat;
+  height: 25px;
+  width: 25px;
+}
+#popup-box .close:hover {
+  /*background: url('../img/close_red.png') no-repeat;*/
+}
+/* position of resource containers */
+#resource-performance_of_subsc {
+  margin-top: -220px;
+}
+#resource-operator_revenue_data {
+  margin-top: -700px;
+}
+#resource-cabletv {
+  margin-top: -100px;
+}
+#resource-internet_subsc {
+  margin-top: -300px;
+}
+#resource-licencecr {
+  margin-top: -200px;
+}
+#resource-cabletvmap {
+  margin-top: -30px;
+}
+#resource-telecom_sector_revenue {
+  margin-top: -150px;
+}
+
+#resource-spectrum_fee {
+  margin-top: -430px;
+}
+#resource-ITUdataexplorer {
+  margin-top: -300px;
 }
 
 .news-item-wrapper{
-    /* position: absolute ; */
     float:left;
     padding: 5px;
     margin: 10px;
@@ -365,4 +462,19 @@ textarea {
     box-shadow: 0 8px 6px -6px #aaa;
     -moz-box-shadow: 0 8px 6px -6px #aaa;
     -webkit-box-shadow: 0 8px 6px -6px #aaa;
+}
+.news-item-wrapper:hover {
+  -moz-transition: box-shadow 500ms ease 0s;
+  -webkit-transition:box-shadow 500ms ease 0s;
+  box-shadow: 0 0 20px #000;
+  -moz-box-shadow: 0 0 20px #000;
+  -webkit-box-shadow: 0 0 20px #000;
+}
+.description {
+  font-size: 13px;
+  font-weight: bold;
+}
+.heading {
+  font-size: 15px;
+  font-weight: bold;
 }
