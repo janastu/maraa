@@ -10,8 +10,9 @@
       'resource-directory'  : "resource_directory",
       'media'     : "media",
       'contact'   : "contact",
-      'station/:x': "station"
-
+      'station/:x': "station",
+      'pivot'     : "pivot",
+      'timeline'  : "timeline"
     },
 
     index: function() {
@@ -28,8 +29,6 @@
       $('#research-container').show();
       $('#map-container').show();
       self.drawMap();
-      $("#timeline-container").show();
-      self.drawTimeline();
     },
     resource_directory: function() {
       $('.content').hide();
@@ -54,8 +53,12 @@
       $('#treemap-container').show();
       self.drawTreemap(x);
     },
+    pivot: function() {
+       self.pivotTable();
+    },
     timeline: function(){
       $('.content').hide();
+      $('#research-container').show();
       $('#timeline-container').show();
       self.drawTimeline();
     }
@@ -149,8 +152,9 @@
       }
     });
   };
-  self.drawTimeline = function()
-  {
+  self.drawTimeline = function() {
+    if($('#my-timeline').html().length > 500)
+      return;
     var tl;
       var eventSource = new Timeline.DefaultEventSource();
       var bandInfos = [
