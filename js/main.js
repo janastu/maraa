@@ -122,18 +122,37 @@
   // gets the feeds from server side script 'feed.py'
   self.populateFeeds = function() {
     $('#ajax-loader').show();
-    $('.news-item-wrapper').remove();
+//    $('.news-item-wrapper').remove();
     jQuery.getFeed({
       url: 'feeds',
       success: function(feed) {
         $('#ajax-loader').hide();
         var template = _.template($('#news-item-template').html());
         _.each(feed.items, function(item) {
-          $('#feeds').append(template({
+          x = $('#feeds').append(template({
             title: item.title,
             link: item.link
           }));
+	  
+	  // $(x).css("top",Math.random * 100 + 'px');
+	  // $(x).css("left",Math.random * 100 + 'px');
         });
+	var z = 50, flag=true;
+	/*_.each($(".news-item-wrapper"),function(i){
+	  $(i).css("top",100+z+'px');
+	  z = z+150;
+	  if(flag)
+	  {
+	    flag = false;
+	    $(i).css("float","right");
+	    $(i).css("right",'10px');
+	  }
+	  else{
+	    flag = true;
+	    $(i).css("float","left");
+	    $(i).css("left",'10px');
+	  }
+	});*/
       },
       error: function(err) {
         $('#ajax-loader').hide();
