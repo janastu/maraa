@@ -30,7 +30,12 @@
     },
     resource_directory: function() {
       $('.content').hide();
+      $('#resource-directory-container').html($('#resource-directory-content').html());
       $('#resource-directory-container').show();
+      $('.leaf').click(function(event) {
+        var id = $(event.currentTarget).attr('id');
+        self.showPopup(id);
+      });
     },
     media: function() {
       $('.content').hide();
@@ -137,5 +142,22 @@
     });
   };
 
-  self.resource_directory = [];
+  self.showPopup = function(id) {
+    var content = $('#'+id).html();
+    $('#popup-box .content').html(content);
+    $('#overlay').show();
+    $('#popup-box').animate({
+      'width': '700',
+      'top': $(document).scrollTop() + 100,
+      'zIndex': '1000'
+    }, 100, function() {
+      $('#popup-box').show('slow');
+      $('#popup-box .content').show();
+    });
+    $('#popup-box .close').click(function() {
+      $('#popup-box').hide();
+      $('#overlay').hide();
+      return false;
+    });
+  };
 })(M);
