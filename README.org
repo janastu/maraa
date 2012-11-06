@@ -1,0 +1,21 @@
+* Index
+** This is the frontpage of the website.  The page displays a collage made from the images collected over time about various digital media. Related images are supposed to be connected by a line.
+NOTE: Relatedness and tags of the images are yet to be defined.
+
+* News
+** The feeds of various people mentioned by Ram earleier are aggregated using newsrack.  Newsrack is a website which helps in assimalting feeds and gives out a RSS url*** Map: It helps in presenting the location of the 5 various radio station on the map of India.
+*** Pivot table: A table which can be filtered down by various fields set by a end user.  This helps in visualizing the survey data about the demographics.
+*** Treemap: Useful for navigating various ascpects of a radio station.  Helps visualizing the various actors involved in a station.
+*** Timeline: Helps in visualizing the events in a chronological order. 
+NOTE: Ram please give more pictures of the radio stations to put on the map, also please give content on what has to go into every radio station's treemap.
+
+* Resource directory
+** This section has the data that was collected during the research.  Contains telecom coverage data, subscriber population and various such reports.
+
+* Media
+** 
+NOTE: Dinesh, what should go in this section?
+
+* Contact
+** Relevant contact details can go here.
+NOTE: Ram send the contact details.
