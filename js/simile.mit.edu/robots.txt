@@ -1,0 +1,12 @@
+User-agent: *
+Disallow: /bank/
+Disallow: /conference/iswc2005/
+Disallow: /viewsvn/
+Disallow: /gadget/live/
+Disallow: /continuum/
+Disallow: /repository/
+Disallow: /longwell/demo/
+Disallow: /mediawiki/
+Disallow: /rdf-test-data/
+Disallow: /irc/
+Disallow: /trac/

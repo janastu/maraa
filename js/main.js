@@ -11,6 +11,7 @@
       'media'     : "media",
       'contact'   : "contact",
       'station/:x': "station"
+
     },
 
     index: function() {
@@ -27,6 +28,8 @@
       $('#research-container').show();
       $('#map-container').show();
       self.drawMap();
+      $("#timeline-container").show();
+      self.drawTimeline();
     },
     resource_directory: function() {
       $('.content').hide();
@@ -45,6 +48,11 @@
       $('#research-container').show();
       $('#treemap-container').show();
       self.drawTreemap(x);
+    },
+    timeline: function(){
+      $('.content').hide();
+      $('#timeline-container').show();
+      self.drawTimeline();
     }
   });
 
@@ -128,26 +136,7 @@
             title: item.title,
             link: item.link
           }));
-	  
-	  // $(x).css("top",Math.random * 100 + 'px');
-	  // $(x).css("left",Math.random * 100 + 'px');
         });
-	var z = 50, flag=true;
-	/*_.each($(".news-item-wrapper"),function(i){
-	  $(i).css("top",100+z+'px');
-	  z = z+150;
-	  if(flag)
-	  {
-	    flag = false;
-	    $(i).css("float","right");
-	    $(i).css("right",'10px');
-	  }
-	  else{
-	    flag = true;
-	    $(i).css("float","left");
-	    $(i).css("left",'10px');
-	  }
-	});*/
       },
       error: function(err) {
         $('#ajax-loader').hide();
@@ -155,6 +144,36 @@
       }
     });
   };
-
+  
+  self.drawTimeline = function()
+  {
+    var tl;
+      var eventSource = new Timeline.DefaultEventSource();
+      var bandInfos = [
+	Timeline.createBandInfo({
+	  eventSource:    eventSource,
+          date:"Jan 01 1996 00:00:00 GMT",
+          width:          "100%", 
+          intervalUnit:   Timeline.DateTime.YEAR, 
+          intervalPixels: 100
+	})
+      ];
+      /*bandInfos[0].syncWith = 0;*/
+      bandInfos[0].highlight = true;
+      
+      tl = Timeline.create(document.getElementById("my-timeline"), bandInfos);
+      Timeline.loadXML("example1.xml", function(xml, url) { eventSource.loadXML(xml, url); });
+      
+      var resizeTimerID = null;
+      function onResize() {
+	if (resizeTimerID == null) {
+	  resizeTimerID = window.setTimeout(function() {
+            resizeTimerID = null;
+            tl.layout();
+	  }, 500);
+	}		
+      }
+  };
+  
   self.resource_directory = [];
 })(M);
