@@ -333,6 +333,7 @@ textarea {
   height: auto;
 }
 
+
 /* .news-item-wrapper { */
 /*   padding: 3px; */
 /*   margin: 5px; */
@@ -342,7 +343,7 @@ textarea {
   display: none;
   position: relative;
   top: 240px;
-  left: 240px;
+  left: 500px;
 }
 
 .leaf {
@@ -452,7 +453,6 @@ textarea {
 }
 
 .news-item-wrapper{
-    /* position: absolute ; */
     float:left;
     padding: 5px;
     margin: 10px;
@@ -462,4 +462,19 @@ textarea {
     box-shadow: 0 8px 6px -6px #aaa;
     -moz-box-shadow: 0 8px 6px -6px #aaa;
     -webkit-box-shadow: 0 8px 6px -6px #aaa;
+}
+.news-item-wrapper:hover {
+  -moz-transition: box-shadow 500ms ease 0s;
+  -webkit-transition:box-shadow 500ms ease 0s;
+  box-shadow: 0 0 20px #000;
+  -moz-box-shadow: 0 0 20px #000;
+  -webkit-box-shadow: 0 0 20px #000;
+}
+.description {
+  font-size: 13px;
+  font-weight: bold;
+}
+.heading {
+  font-size: 15px;
+  font-weight: bold;
 }

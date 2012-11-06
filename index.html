@@ -141,6 +141,9 @@
 
           <div id="news-container" style="display: none;" class="content">
             <h2> News</h2>
+            <div class="description">
+              Latest news from newsrack.in
+            </div>
             <div id="feeds">
               <img src="img/ajax-loader.gif" id="ajax-loader">
             </div>
@@ -153,18 +156,34 @@
           </div>
 
           <div id="research-container" style="display: none;" class="content">
+            <div class="heading">
+              >> Here we present the data we have gathered and analysed about the existing community
+              radio stations in India. <<
+            </div>
+            
             <div class="container content" id="map-container" style="display: none;">
+              <div class="description">
+                The map identifes the location and names of the various community radio stations in India.<br/>
+                Clicking on them reveals more information about the radio station.
+              </div>
               <div id="map" style="width: 1000px; height: 500px; margin-top:30px;"></div>
               <div id="legend1">
                 <div id="bluelegend"><p id="t1"></p></div>
                 <div id="blacklegend"><p id="t2"></p></div>
               </div>
             </div>
+
             <div class="content" id="treemap-container" style="display: none;">
+              <div class="description">Treemap shows more details about each radio station.</div>
               <p><b><a href="#/pivot/" onclick="M.pivotTable();">Pivot Table</a></b></p>
               <div id="tmap"></div>
             </div>
+
             <div class="content" id="pivot-wrapper" style="display: none;">
+              <div class="description">
+                This shows the survey data (of CR stations) in a tabular way.<br/>
+                This can be filtered to see and compare data.
+              </div>
               <div id="pivot-container"></div>
               <div class="clearfix" style="clear:both;"></div>
               <span id="pivot-detail"></span>
@@ -175,6 +194,10 @@
 
           <div id="resource-directory-container" style="display: none;" class="content">
             <h2> Resource Directory </h2>
+            <div class="description">
+              Contains resources and information about telecom coverage, subscriber population and various other reports.
+            </div>
+            <div class="resource-content"></div>
           </div>
             
 
@@ -184,6 +207,7 @@
 
           <div id="contact-container" style="display: none;" class="content">
             <h2> Contact </h2>
+            <p> TODO: Relevant contact details to come up here</p>
           </div>
 
           <div class="menu" class="navigation">
@@ -211,11 +235,11 @@
 
         <!-- Resource Directory Content -->
         <div id="resource-directory-content" style="display: none;">
-
           <div id="popup-box" style="display: none;">
             <a class="close" href="#"></a>
             <div class="content"></div>
           </div>
+
           <div class="leaf" id="resource-category">
             <div class="text">
               Department of Telecommunication categorized the geographic location of India into Telecom Circles comprising Category A, B, C and Metro
