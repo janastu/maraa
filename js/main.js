@@ -134,12 +134,12 @@
   // populate with news feeds in the news section
   // gets the feeds from server side script 'feed.py'
   self.populateFeeds = function() {
-    $('#ajax-loader').show();
+    $('#feeds-loader').show();
     $('.news-item-wrapper').remove();
     jQuery.getFeed({
       url: 'feeds',
       success: function(feed) {
-        $('#ajax-loader').hide();
+        $('#feeds-loader').hide();
         var template = _.template($('#news-item-template').html());
         _.each(feed.items, function(item) {
           x = $('#feeds').append(template({
@@ -149,7 +149,7 @@
         });
       },
       error: function(err) {
-        $('#ajax-loader').hide();
+        $('#feeds-loader').hide();
         $('#feeds').append('Oops, something went wrong! <br/> Please try again.');
       }
     });

@@ -307,7 +307,7 @@ textarea {
   margin-top: 30px;
 }
 .menu ul{
-  margin: 0 0 0 180px;
+  margin: 0 0 0 200px;
   padding: 0;
   float: left;
 }
@@ -343,7 +343,7 @@ textarea {
   display: none;
   position: relative;
   top: 240px;
-  left: 500px;
+  left: 530px;
 }
 #menu-loader {
   position: relative;
@@ -469,6 +469,9 @@ textarea {
     box-shadow: 0 8px 6px -6px #aaa;
     -moz-box-shadow: 0 8px 6px -6px #aaa;
     -webkit-box-shadow: 0 8px 6px -6px #aaa;
+}
+#news-container {
+  min-height: 500px;
 }
 .news-item-wrapper:hover {
   -moz-transition: box-shadow 500ms ease 0s;
