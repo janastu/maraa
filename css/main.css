@@ -389,6 +389,7 @@ textarea {
 }
 
 #overlay {
+  margin-top: -145px;
   width: 1400px;
   height: 10000px;
   opacity: 0.3;
@@ -427,34 +428,35 @@ textarea {
 #popup-box .close:hover {
   /*background: url('../img/close_red.png') no-repeat;*/
 }
+
 /* position of resource containers */
 #resource-performance_of_subsc {
+  margin-top: -270px;
+}
+#resource-wirelessmetro{
+  margin-top: -350px;
+}
+#resource-wirelinesubscriber2{
+  margin-top: -310px;
+}
+#resource-cabletvmap {
   margin-top: -220px;
 }
 #resource-operator_revenue_data {
-  margin-top: -700px;
+  margin-top: -120px;
 }
-#resource-cabletv {
-  margin-top: -100px;
+#resource-revenuereportcircle {
+  margin-top: -10px;
 }
-#resource-internet_subsc {
-  margin-top: -300px;
-}
-#resource-licencecr {
-  margin-top: -200px;
-}
-#resource-cabletvmap {
-  margin-top: -30px;
-}
-#resource-telecom_sector_revenue {
-  margin-top: -150px;
-}
-
 #resource-spectrum_fee {
-  margin-top: -430px;
+  margin-top: -120px;
 }
-#resource-ITUdataexplorer {
-  margin-top: -300px;
+#resource-crprocedure {
+  margin-top: -160px;
+}
+#resource-IDIranking {
+  margin-top: -280px;
+  margin-left: 375px;
 }
 
 .news-item-wrapper{
