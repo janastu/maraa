@@ -311,7 +311,7 @@ textarea {
   padding: 0;
   float: left;
 }
- 
+
 .menu ul li{
   display: inline;
 }
@@ -323,7 +323,7 @@ textarea {
     color: #FF6633;
     padding: 12.5px 20px;
  }
- 
+
 .menu ul li a:visited {
     color: #FF6633;
 }
@@ -349,6 +349,13 @@ textarea {
   position: relative;
   left: 500px;
   top: 30px;
+}
+
+#media-loader {
+  position: absolute;
+  left: 750px;
+  top: 300px;
+
 }
 
 .leaf {

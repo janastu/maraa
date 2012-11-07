@@ -40,8 +40,10 @@
       });
     },
     media: function() {
+				$("#media-loader").show();
       $('.content').hide();
       $('#media-container').show();
+				self.populateMedia();
     },
     contact: function() {
       $('.content').hide();
@@ -163,17 +165,17 @@
 	Timeline.createBandInfo({
 	  eventSource:    eventSource,
           date:"Jan 01 1996 00:00:00 GMT",
-          width:          "100%", 
-          intervalUnit:   Timeline.DateTime.YEAR, 
+          width:          "100%",
+          intervalUnit:   Timeline.DateTime.YEAR,
           intervalPixels: 100
 	})
       ];
       /*bandInfos[0].syncWith = 0;*/
       bandInfos[0].highlight = true;
-      
+
       tl = Timeline.create(document.getElementById("my-timeline"), bandInfos);
       Timeline.loadXML("example1.xml", function(xml, url) { eventSource.loadXML(xml, url); });
-      
+
       var resizeTimerID = null;
       function onResize() {
 	if (resizeTimerID == null) {
@@ -181,11 +183,26 @@
             resizeTimerID = null;
             tl.layout();
 	  }, 500);
-	}		
+	}
       }
   };
-  
+
   self.resource_directory = [];
+
+		self.populateMedia = function()
+		{
+				$.getJSON('js/video.json', function(data){
+						$('#media-loader').hide();
+						length = 0;
+						_.each(data,function(i){length++;});
+						if($('#media-item').children().length < length)
+						{
+								_.each(data,function(i){
+										$('#media-item').append(i);
+								});
+						}
+				});
+		};
 
   self.showPopup = function(id) {
     var content = $('#'+id).html();
