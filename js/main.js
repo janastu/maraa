@@ -174,7 +174,7 @@
       bandInfos[0].highlight = true;
 
       tl = Timeline.create(document.getElementById("my-timeline"), bandInfos);
-      Timeline.loadXML("example1.xml", function(xml, url) { eventSource.loadXML(xml, url); });
+      Timeline.loadXML("data/timeline.xml", function(xml, url) { eventSource.loadXML(xml, url); });
 
       var resizeTimerID = null;
       function onResize() {
