@@ -88,7 +88,12 @@
       $('.pivot-title').html('Survey data of Radio Active is unavailable');
     }
     else {
-      $('.pivot-title').html('<h3> Demographics of ' + self.stationMap[x] + '</h3>');
+      if(x) {
+        $('.pivot-title').html('<h3> Demographics of ' + self.stationMap[x] + '</h3>');
+      }
+      else {
+        $('.pivot-title').html('<h3> Demographics in a pivot table </h3>');
+      }
     }
     self.drawPivot(filters);
   };
@@ -104,10 +109,12 @@
   // draw pivot table from the survey data
   self.drawPivot = function(filters) {
     filters['Demographic'] = 'Age';
-    var station = self.stationMap[filters['Radio Station']];
-    filters['Radio Station'] = station;
-    if(station === 'Radio Active') {
-      delete filters['Radio Station'];
+    if(filters['Radio Station']) {
+      var station = self.stationMap[filters['Radio Station']];
+      filters['Radio Station'] = station;
+      if(station === 'Radio Active') {
+        delete filters['Radio Station'];
+      }
     }
     var formatPercent = function(value) {
       return value + ' %';
