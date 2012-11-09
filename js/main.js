@@ -156,7 +156,7 @@
 
   // some cleanup in pivot
   self.cleanUp = function() {
-    $('body h2').each(function(idx, elem) {
+    $('#pivot-container h2').each(function(idx, elem) {
       $(elem).remove();
       /*if($(elem).html() == "Label Fields" ||
         $(elem).html() == "Summary Fields") {
