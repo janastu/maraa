@@ -518,3 +518,9 @@ h2 {
   margin-top: 20px;
   margin-bottom: 20px;
 }
+.pivot-title {
+  text-align: center;
+}
+.red {
+  color: red;
+}

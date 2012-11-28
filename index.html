@@ -38,7 +38,6 @@
             <div id="content">
 
               <div class="container">
-                <img id="logo" src=""></img>
                 <ul class="thumb1">
                   <li><a href="#"><img src="" alt="" style="background:#BEFAF3"/></a></li>
                   <li><a href="#"><img src="" alt="100W" style="background:#BEFAF3" /></a></li>
@@ -52,7 +51,7 @@
                 </ul>
 
                 <ul class="thumb">
-                  <li><a href="#"><img src="img/frontpage/antenna.jpg" alt="antena" style="background:#F2CEDF"/></a></li>
+                  <li><a href="#"><img src="img/frontpage/antenna.jpg" alt="antenna" style="background:#F2CEDF"/></a></li>
                   <li><a href="#"><img style="background:#FFFFFF"/></a></li>
                   <li><a href="#"><img src="img/frontpage/images/image1.png" alt="signal strength"style="background:#F2CEDF" /></a></li>
                   <li><a href="#"><img src="img/frontpage/images/image2.png" alt="signal strength"style="background:#F2CEDF" /></a></li>
@@ -158,9 +157,8 @@
             <div class="heading">
               >> The collected data, about the existing community
               radio stations in India, has been analysed and is being presented for others to visualize. <<
+              <p><a class="module" href="#/pivot" >Pivot Table</a></p>
             </div>
-            <p><a href="#/timeline" class="module">Events Timeline</a></p>
-            <p><a href="#/pivot" class="module">Pivot Table</a></p>
 
             <div class="container content" id="map-container" style="display: none;">
               <div class="description">
@@ -181,18 +179,23 @@
             </div>
 
             <div class="content" id="pivot-wrapper" style="display: none;">
-              <div class="description">
-                This shows the survey data (of CR stations) in a tabular way.<br/>
-                This can be filtered to see and compare data.
-              </div>
+              <div class="pivot-title red"></div>
               <div id="pivot-container"></div>
               <div class="clearfix" style="clear:both;"></div>
               <span id="pivot-detail"></span>
               <div class="clearfix" style="clear:both;"></div>
               <div id="results"></div>
             </div>
+	        </div>
 
 
+
+          <div id="resource-directory-container" style="display: none;" class="content">
+            <h2> Resource Directory </h2>
+            <div class="description">
+              Contains resources and information about telecom coverage, subscriber population and various other reports.
+            </div>
+            <p><a href="#/timeline" class="module">Events Timeline</a></p>
             <div id="timeline-container" style="display:none;" class="content">
               <div class="heading">
                 <h2> Events Timeline </h2>
@@ -203,13 +206,6 @@
                 The timeline below brings up the information regarding the digital media over the periods
               </div>
               <div id="my-timeline" style="height: 150px;  border: 1px solid #aaa; width:90%; margin: 0px auto;"></div>
-            </div>
-	        </div>
-
-          <div id="resource-directory-container" style="display: none;" class="content">
-            <h2> Resource Directory </h2>
-            <div class="description">
-              Contains resources and information about telecom coverage, subscriber population and various other reports.
             </div>
             <div class="resource-content"></div>
           </div>

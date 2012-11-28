@@ -11,6 +11,7 @@
       'media'     : "media",
       'contact'   : "contact",
       'station/:x': "station",
+      'station/:x/Demographics': "pivot",
       'pivot'     : "pivot",
       'timeline'  : "timeline"
     },
@@ -40,10 +41,10 @@
       });
     },
     media: function() {
-				$("#media-loader").show();
+			$("#media-loader").show();
       $('.content').hide();
       $('#media-container').show();
-				self.populateMedia();
+			self.populateMedia();
     },
     contact: function() {
       $('.content').hide();
@@ -55,12 +56,12 @@
       $('#treemap-container').show();
       self.drawTreemap(x);
     },
-    pivot: function() {
-       self.pivotTable();
+    pivot: function(x) {
+      self.pivotTable(x);
     },
     timeline: function(){
       $('.content').hide();
-      $('#research-container').show();
+      $('#resource-directory-container').show();
       $('#timeline-container').show();
       self.drawTimeline();
     }
@@ -78,15 +79,43 @@
   };
 
   // draw pivot table
-  self.pivotTable = function() {
+  self.pivotTable = function(x) {
     $('.content').hide();
     $('#research-container').show();
     $('#pivot-wrapper').show();
-    self.drawPivot();
+    var filters = (x) ? {'Radio Station': x} : {};
+    if(self.stationMap[x] === 'Radio Active') {
+      $('.pivot-title').html('Survey data of Radio Active is unavailable');
+    }
+    else {
+      if(x) {
+        $('.pivot-title').html('<h3> Demographics of ' + self.stationMap[x] + '</h3>');
+      }
+      else {
+        $('.pivot-title').html('<h3> Demographics in a pivot table </h3>');
+      }
+    }
+    self.drawPivot(filters);
+  };
+
+  self.stationMap = {
+    'gka' : 'Gurgaon Ki Awaz',
+    'llv' : 'Lalit Lokvani',
+    'rac' : 'Radio Active',
+    'kmv' : 'Kumaon Vani',
+    'rbk' : 'Radio Bundelkhand'
   };
 
   // draw pivot table from the survey data
-  self.drawPivot = function() {
+  self.drawPivot = function(filters) {
+    filters['Demographic'] = 'Age';
+    if(filters['Radio Station']) {
+      var station = self.stationMap[filters['Radio Station']];
+      filters['Radio Station'] = station;
+      if(station === 'Radio Active') {
+        delete filters['Radio Station'];
+      }
+    }
     var formatPercent = function(value) {
       return value + ' %';
     };
@@ -112,25 +141,34 @@
                  }},
       url: 'data/frequency.csv',
       fields: fields,
-      filters: {'Radio Station': 'Gurgaon Ki Awaz', Demographic: 'Age'},
+      filters: filters,
       rowLabels: row_labels,
     };
     if(pivot && !$('#pivot-container').html().length) {
+      $('#pivot-container').pivot_display('setup', options);
+    }
+    if(filters) {
+      pivot.filters().add(filters);
+      pivot.filters().apply();
       $('#pivot-container').pivot_display('setup', options);
     }
   };
 
   // some cleanup in pivot
   self.cleanUp = function() {
-    $('body h2').each(function(idx, elem) {
-      if($(elem).html() == "Label Fields" ||
+    $('#pivot-container h2').each(function(idx, elem) {
+      $(elem).remove();
+      /*if($(elem).html() == "Label Fields" ||
         $(elem).html() == "Summary Fields") {
 
         $(elem).remove();
       }
       $('#summary-fields').remove();
-      $('#label-fields').remove();
+      $('#label-fields').remove();*/
     });
+    if(!$('#select-constructor').parent().find('h4').length) {
+      $('#select-constructor').parent().prepend('<h4>Filter Fields</h4>');
+    }
   };
 
   // populate with news feeds in the news section
@@ -174,7 +212,7 @@
       bandInfos[0].highlight = true;
 
       tl = Timeline.create(document.getElementById("my-timeline"), bandInfos);
-      Timeline.loadXML("example1.xml", function(xml, url) { eventSource.loadXML(xml, url); });
+      Timeline.loadXML("data/timeline.xml", function(xml, url) { eventSource.loadXML(xml, url); });
 
       var resizeTimerID = null;
       function onResize() {
