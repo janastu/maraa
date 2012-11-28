@@ -3,7 +3,7 @@ import urllib2
 def application(environ, start_response):
     status = '200 OK'
     try:
-        page = urllib2.urlopen("http://newsrack.in/rss/rohitkumar/Radiohello/Media-Feeds/rss.xml")
+        page = urllib2.urlopen("http://newsrack.in/rss/rohitkav123/Community-Radio/rss.xml")
         data = page.read()
         page.close()
     except:
