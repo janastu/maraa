@@ -32,10 +32,8 @@ var PageView = Backbone.View.extend({
       $(this.el).hide();
     },
     render: function() {
-      var types = this.types;
-      var el = this.el;
       _.each(this.model.get('content'), function(data) {
-        var elem = $(types[data['type']]);
+        var elem = $(this.types[data['type']]);
         if(data['src']) {
           elem.attr('src', data['src']);
         }
@@ -44,14 +42,14 @@ var PageView = Backbone.View.extend({
         }
         if(data['type'] === 'rss') {
           var template = _.template($('#news-template').html());
-          elem.html(template());
+          $('#'+this.model.id).html(template());
           M.rss_link  = data['data'];
         }
         else {
           elem.html(data['data']);
         }
-        elem.appendTo(el);
-      });
+        elem.appendTo(this.el);
+      }, this);
     }
 });
 

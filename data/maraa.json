@@ -34,7 +34,7 @@
       {
         "tags": ["news", "community radio", "latest"],
         "type": "rss",
-        "data": "http://newsrack.in/rss/rohitkav123/img/frontpage/rss.xml"
+        "data": "http://newsrack.in/rss/rohitkav123/community-radio/rss.xml"
       }
     ]
   },
