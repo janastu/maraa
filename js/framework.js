@@ -10,10 +10,7 @@ var Page = Backbone.Model.extend({
     // adding the name of the model as its id.
     // look up of this model through the collection
     // is faster this way.
-    this.set({id: this.sanitize(this.get('name'))});
-  },
-  sanitize: function(str) {
-    return str.replace(' ','-');
+    this.set({id: M.sanitize(this.get('name'))});
   }
 });
 
@@ -52,11 +49,35 @@ var PageView = Backbone.View.extend({
 });
 
 var AppView = Backbone.View.extend({
+  el: 'body',
+  events: {
+    'click .nav li a' : 'navClicked'
+  },
   initialize: function() {
     _.bindAll(this);
   },
   render: function() {
+    M.createNavigation();
     $('#index').show();
+  },
+  navClicked: function(event) {
+    $('.nav li').removeClass('active');
+    $(event.currentTarget).parent().toggleClass('active');
+  }
+});
+
+var AppRouter = Backbone.Router.extend({
+  routes : {
+    'index' : 'index',
+    ':page' : 'showPage'
+  },
+  index: function() {
+    $('.page').hide();
+    $('#index').show();
+  },
+  showPage: function(page) {
+    $('.page').hide();
+    $('#'+page).show();
   }
 });
 
@@ -72,9 +93,31 @@ M.init = function() {
   });
   M.appView = new AppView();
   M.appView.render();
+  var app_router = new AppRouter();
+  Backbone.history.start();
 };
 
+//create navigational links
 M.createNavigation = function() {
+  var links = M.pages.get('index').get('children');
+  $('<li class="active"><a href="#/index">Home</a></li>').appendTo('.nav');;
+  _.each(links, function(link) {
+    $('<li><a href="#/' + link + '">' +
+      M.humanReadable(link) + '</a></li>').appendTo('.nav');
+  });
+};
+
+// change all spaces to '-'
+M.sanitize = function(str) {
+  return '' + str.replace(' ','-');
+};
+
+// change all '-' to spaces and capitalize first letter of
+// every word
+M.humanReadable = function(str) {
+  return '' + str.replace('-', ' ').replace(/[^\s]+/g, function(str) {
+    return str.substr(0,1).toUpperCase() + str.substr(1).toLowerCase();
+  });
 };
 
 })(M);
