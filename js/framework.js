@@ -112,6 +112,28 @@ M.sanitize = function(str) {
   return '' + str.replace(' ','-');
 };
 
+	M.contentList = []; //A list to hold out filtered content objects.
+
+//Check for the tags and return only those "content" objects which match a given tag.
+M.checkTags = function(tag){
+	if(M.contentList.length > 0)
+	{
+		M.contentList = [];  //List has to be cleaned before pushing data into it again.
+	}
+	_.each(M.site_content, function(data){
+		_.each(data['content'],function(item){
+			for(var i in item['tags'])
+			{
+				if( item.tags[i] == tag)
+				{
+					M.contentList.push(item);
+					break;
+				}
+			}
+		});
+	});
+};
+
 // change all '-' to spaces and capitalize first letter of
 // every word
 M.humanReadable = function(str) {
