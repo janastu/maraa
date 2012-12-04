@@ -24,5 +24,18 @@
       });
     </script>
     <script src="js/framework.js"></script>
+    <script src="js/jquery.jfeed.js"></script>
+    <script type="text/template" id="news-template">
+      <div id="feeds">
+        <img src="img/ajax-loader.gif" id="feeds-loader"/>
+      </div>
+    </script>
+    <script type="text/template" id="news-item-template">
+      <div class="news-item-wrapper">
+        <div class="news-title"><%= title %></div>
+        <a href="<%= link %>">Read More</a>
+      </div>
+    </script>
+
   </body>
 </html>

@@ -42,7 +42,14 @@ var PageView = Backbone.View.extend({
         if(data['id']) {
           elem.attr('id', data['id']);
         }
-        elem.html(data['data']);
+        if(data['type'] === 'rss') {
+          var template = _.template($('#news-template').html());
+          elem.html(template());
+          M.rss_link  = data['data'];
+        }
+        else {
+          elem.html(data['data']);
+        }
         elem.appendTo(el);
       });
     }
@@ -62,7 +69,7 @@ var AppView = Backbone.View.extend({
   },
   navClicked: function(event) {
     $('.nav li').removeClass('active');
-    $(event.currentTarget).parent().toggleClass('active');
+    $(event.currentTarget).parent().addClass('active');
   }
 });
 
@@ -77,6 +84,9 @@ var AppRouter = Backbone.Router.extend({
   },
   showPage: function(page) {
     $('.page').hide();
+    if(page === 'news') {
+      M.populateFeeds(M.rss_link);
+    }
     $('#'+page).show();
   }
 });
@@ -106,6 +116,34 @@ M.createNavigation = function() {
       M.humanReadable(link) + '</a></li>').appendTo('.nav');
   });
 };
+
+// populate with news feeds in the news section
+// gets the feeds from server side script 'feed.py'
+M.populateFeeds = function(rss_url) {
+  $('#feeds-loader').show();
+  $('.news-item-wrapper').remove();
+  jQuery.getFeed({
+    url: 'feeds',
+    type: 'POST',
+    data: rss_url,
+    success: function(feed) {
+      $('#feeds-loader').hide();
+      var template = _.template($('#news-item-template').html());
+      _.each(feed.items, function(item) {
+        x = $('#feeds').append(template({
+          title: item.title,
+          link: item.link
+        }));
+      });
+    },
+    error: function(err) {
+      $('#feeds-loader').hide();
+      $('#feeds').append('Oops, something went wrong! <br/> Please try again.');
+    }
+  });
+};
+
+/* Other helper functions */
 
 // change all spaces to '-'
 M.sanitize = function(str) {
