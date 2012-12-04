@@ -1,0 +1,97 @@
+[
+  {
+    "name": "index",
+    "children": ["news","research","resource-directory","media","contact"],
+    "content": [
+      {
+        "tags": ["community radio", "antenna"],
+        "type": "image",
+        "src" : "./img/frontpage/antenna.jpg",
+        "data": "",
+        "id": "antenna",
+        "color": "#FAEBD7"
+      },
+      {
+        "tags": ["community radio", "signals"],
+        "type": "image",
+        "src" : "./img/frontpage/signals.jpg",
+        "id": "signals",
+        "color": "#FAEBD7"
+      },
+      {
+        "tags": ["community radio", "on air"],
+        "type": "image",
+        "src" : "./img/frontpage/on-air.jpg",
+        "id": "air",
+        "color": "#A9A9A9"
+      }
+    ]
+  },
+  {
+    "name": "news",
+    "children": [],
+    "content": [
+      {
+        "tags": ["news", "community radio", "latest"],
+        "type": "rss",
+        "data": "http://newsrack.in/rss/rohitkav123/img/frontpage/rss.xml"
+      }
+    ]
+  },
+  {
+    "name": "research",
+    "children": [],
+    "content": [
+      {
+        "tags": ["community radio", "data", "research", "visualisation", "survey", 
+          "community radio stations", "cr stations", "pivot table"],
+        "type": "",
+        "data": ""
+      }
+    ]
+  },
+  {
+    "name": "resource-directory",
+    "children": [],
+    "content": [
+      {
+        "tags": ["resources", "sources", "research", "policy", "subscriber",
+          "report", "timeline"],
+        "type": "",
+        "data": ""
+      }
+    ]
+  },
+  {
+    "name": "media",
+    "children": [],
+    "content": [
+      {
+        "tags": ["media", "videos", "interviews", "community radio"],
+        "type": "videos",
+        "data": ""
+      }
+    ]
+  },
+  {
+    "name": "contact",
+    "children": [],
+    "content": [
+      {
+        "tags": ["contact us", "contact"],
+        "type": "text",
+        "data": "Phone: 80 2529 7843"
+      },
+      {
+        "tags": ["contact us", "contact"],
+        "type": "text",
+        "data": "Email: info@maraa.in"
+      },
+      {
+        "tags": ["contact us", "contact"],
+        "type": "text",
+        "data": "Address: II floor, No.3, 4th Cross, Michaelpalya 2nd Stage Bangalore, Karnataka, India 560075"
+      }
+    ]
+  }
+]
