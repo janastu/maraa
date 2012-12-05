@@ -27,7 +27,7 @@ var PageView = Backbone.View.extend({
     initialize: function() {
       _.bindAll(this);
       //_.bind(this.render, this);
-      $('#container').append(this.el);
+      $('#content-container').append(this.el);
       this.render();
       $(this.el).hide();
     },
