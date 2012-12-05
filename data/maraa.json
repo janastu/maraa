@@ -34,7 +34,7 @@
       {
         "tags": ["news", "community radio", "latest"],
         "type": "rss",
-        "data": "http://newsrack.in/rss/rohitkav123/community-radio/rss.xml"
+        "data": "http://newsrack.in/rss/rohitkav123/Community-Radio/rss.xml"
       }
     ]
   },
@@ -43,7 +43,7 @@
     "children": [],
     "content": [
       {
-        "tags": ["community radio", "data", "research", "visualisation", "survey", 
+        "tags": ["community radio", "data", "research", "visualisation", "survey",
           "community radio stations", "cr stations", "pivot table"],
         "type": "",
         "data": ""

@@ -122,8 +122,8 @@ M.populateFeeds = function(rss_url) {
   $('.news-item-wrapper').remove();
   jQuery.getFeed({
     url: 'feeds',
-    type: 'POST',
-    data: rss_url,
+    type: 'GET',
+    data: "rss_url="+encodeURIComponent(rss_url),
     success: function(feed) {
       $('#feeds-loader').hide();
       var template = _.template($('#news-item-template').html());
@@ -151,23 +151,28 @@ M.sanitize = function(str) {
 	M.contentList = []; //A list to hold out filtered content objects.
 
 //Check for the tags and return only those "content" objects which match a given tag.
-M.checkTags = function(tag){
-	if(M.contentList.length > 0)
+M.checkTags = function(tags){
+	if(_.isArray(tags))
 	{
-		M.contentList = [];  //List has to be cleaned before pushing data into it again.
-	}
-	_.each(M.site_content, function(data){
-		_.each(data['content'],function(item){
-			for(var i in item['tags'])
-			{
-				if( item.tags[i] == tag)
-				{
-					M.contentList.push(item);
-					break;
-				}
-			}
+		if(M.contentList.length > 0)
+		{
+			M.contentList = [];  //List has to be cleaned before pushing data into it again.
+		}
+		_.each(M.site_content,function(data){
+			_.each(data['content'],function(items){
+				_.filter(items.tags,function(tag){
+					for(var i in tags)
+					{
+						if(tags[i] == tag)
+							M.contentList.push(items);
+					}
+				});
+				_.uniq(M.contentList); //To remove duplicate entries.
+			});
 		});
-	});
+	}
+	else
+		return false; //Failure code, the function will only accept a list as input
 };
 
 // change all '-' to spaces and capitalize first letter of

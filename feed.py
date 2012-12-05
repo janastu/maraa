@@ -1,15 +1,20 @@
+from flask import Flask
+from flask import request
 import urllib2
 
-def application(environ, start_response):
-    status = '200 OK'
+app = Flask(__name__)
+
+@app.route('/',methods=['GET'])
+def index():
+    url = request.args['rss_url']
     try:
-        page = urllib2.urlopen("http://newsrack.in/rss/rohitkav123/Community-Radio/rss.xml")
+        page = urllib2.urlopen(url)
         data = page.read()
         page.close()
     except:
         status = "500"
         data = "Something went wrong while fetching the feeds."
-    response_headers = [('Content-type', 'text/xml'),
-                        ('Content-Length', str(len(data)))]
-    start_response(status, response_headers)
-    return [data]
+    return data
+
+if __name__ == '__main__':
+    app.run(debug=True, host='0.0.0.0')
