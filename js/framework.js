@@ -1,5 +1,75 @@
 (function(M) {
 /* Defining Backbone models, collections and views */
+
+var text = Backbone.Model.extend({
+	defaults:{
+		data:"",
+		tags:[]
+	},
+	initialize: function()
+	{
+		//this.set('data',data);
+	}
+});
+
+var image = Backbone.Model.extend({
+	defaults:{
+		src:"",
+		tags:[]
+	},
+	initialize:function()
+	{
+//		this.set('src',src);
+	}
+});
+
+
+var video = Backbone.Model.extend({
+	defaults:{
+		src:"",
+		tags:[]
+	},
+	initialize:function()
+	{
+//		this.set('src',src);
+	}
+
+});
+
+var rss = Backbone.Model.extend({
+	defaults:{
+		src:"",
+		tags:[]
+	},
+	initialize:function()
+	{
+//		this.set('src',src);
+	}
+});
+
+// var Media = Backbone.Model.extend({
+// 	defaults:{
+// 		"audio": new Audio() ,
+// 		"video": new Video(),
+// 		"image": new Image()
+// }
+
+// });
+M.text = text;
+M.video = video;
+M.rss = rss;
+M.image = image;
+
+var Texts = Backbone.Collection.extend({model: text});
+var Images = Backbone.Collection.extend({model: image});
+var Videos = Backbone.Collection.extend({model: video});
+var RSSs = Backbone.Collection.extend({model: rss});
+
+	M.Texts = Texts;
+	M.Images = Images;
+	M.Videos = Videos;
+	M.RSSs = RSSs;
+
 var Page = Backbone.Model.extend({
   defaults: {
     name: "index",
@@ -13,6 +83,7 @@ var Page = Backbone.Model.extend({
     this.set({id: M.sanitize(this.get('name'))});
   }
 });
+
 
 var Pages = Backbone.Collection.extend({
   model: Page
@@ -91,6 +162,32 @@ var AppRouter = Backbone.Router.extend({
 
 /* Defining other necessary functions */
 M.init = function() {
+
+	M.tags = {};
+	_.each(M.site_content,function(data){
+		_.each(data['content'],function(item){
+			if(item['type'] == 'image')
+			{
+				var x = new M.image({'src':item['src']});
+			}
+			else if(item['type'] == 'text')
+			{
+				var x = new M.text({'data':item['data']});
+			}
+			else if(item['type'] == 'video')
+			{
+				var x = new M.video({'src':item['src']});
+			}
+			else if(item['type'] == 'rss')
+			{
+				var x = new M.rss({'src':item['src']});
+			}
+			if(x)
+				M.createTagList(item,x);
+		});
+	});
+
+
   M.pages = new Pages(), page_views = [];
   _.each(M.site_content, function(page) {
     var new_page = new Page(page);
@@ -104,6 +201,23 @@ M.init = function() {
   var app_router = new AppRouter();
   Backbone.history.start();
 };
+
+//Helper method for making a list of id associated to tag
+	M.createTagList = function(item,x)
+	{
+		console.log(item);
+
+		for(var i in item['tags'])
+		{
+			if( M.tags[item['tags'][i]] === undefined)
+			{
+				M.tags[item['tags'][i]] = [];
+				M.tags[item['tags'][i]].push(x);
+			}
+			else
+				M.tags[item['tags'][i]].push(x);
+		}
+	};
 
 //create navigational links
 M.createNavigation = function() {
@@ -154,22 +268,11 @@ M.sanitize = function(str) {
 M.checkTags = function(tags){
 	if(_.isArray(tags))
 	{
-		if(M.contentList.length > 0)
-		{
-			M.contentList = [];  //List has to be cleaned before pushing data into it again.
-		}
-		_.each(M.site_content,function(data){
-			_.each(data['content'],function(items){
-				_.filter(items.tags,function(tag){
-					for(var i in tags)
-					{
-						if(tags[i] == tag)
-							M.contentList.push(items);
-					}
-				});
-				_.uniq(M.contentList); //To remove duplicate entries.
-			});
+		var list = [];
+		_.each(tags,function(item){
+			list.push(M.tags[item]);
 		});
+		return _.uniq(list);
 	}
 	else
 		return false; //Failure code, the function will only accept a list as input
