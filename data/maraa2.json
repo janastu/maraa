@@ -1,0 +1,434 @@
+[
+  {
+    "name": "index",
+    "children": ["Spectrum", "Funding", "Technology & Infrastructure", "Digital Content & Media", "Social Demographics"],
+    "content": [
+      {
+	
+      }
+    ]
+  },
+  {
+    "name": "Spectrum",
+    "children": ["License Area", "Channel Spacing", "Frequencies available for CR", "Policy making and governing institutions"],
+    "content": [
+      {
+	
+      }
+    ]
+  },
+  {
+    "name": "License Area",
+    "children": [],
+    "content": []
+  },
+  {
+    "name": "Channel Spacing"
+    "children": [],
+    "content": []
+  },
+  {
+    "name": "Frequencies available for CR"
+    "children": [],
+    "content": []
+  },
+  {
+    "name": "Policy making and governing institutions"
+    "children": [],
+    "content": [
+      {
+	"tags": [],
+	"type": "table",
+	"data": {
+	  "td": ["Country", "Regulator", ""]
+	}
+      }
+    ]
+  },
+  {
+    "name": "Funding",
+    "children": ["Funding Institutions", "Community Radio Support Fund in India"],
+    "content": [
+      {
+	
+      }
+    ]
+  },
+  {
+    "name": "Funding Institutions"
+    "children": [],
+    "content": []
+  },
+  {
+    "name": "Community Radio Support Fund in India"
+    "children": [],
+    "content": []
+  },
+  {
+    "name": "Technology & Infrastructure",
+    "children": ["Transmission System", "Telephony", "Internet"],
+    "content": []
+  },
+  {
+    "name": "Transmission System"
+    "children": ["FM Transmitter", "Antenna"],
+    "content": [
+      {
+	"tags":[],
+	"type":"text",
+	"data":
+      },
+      {
+	"tags":[],
+	"type":"image",
+	"data":
+      }
+      
+    ]
+  },
+  {
+    "name": "FM Transmitter"
+    "children": [],
+    "content": []
+  },
+  {
+    "name": "Antenna"
+    "children": [],
+    "content": []
+  },
+  {
+    "name": "Telephony"
+    "children": ["Hybrid", "IVR", "SMS"],
+    "content": []
+  },
+  {
+    "name": "Hybrid"
+    "children": [],
+    "content": []
+  },
+  {
+    "name": "IVR"
+    "children": [],
+    "content": []
+  },
+  {
+    "name": "SMS"
+    "children": [],
+    "content": []
+  },
+  {
+    "name": "Internet"
+    "children": ["Streaming", "Podcast", "Social Media"],
+    "content": []
+  },
+  {
+    "name": "Streaming"
+    "children": [],
+    "content": []
+  },
+  {
+    "name": "Podcast"
+    "children": [],
+    "content": []
+  },
+  {
+    "name": "Social Media"
+    "children": [],
+    "content": []
+  },
+  {
+    "name": "Digital Content & Media",
+    "children": ["IT Rules and Act", "Copyright", "CR Content Code"],
+    "content": [
+      {
+	
+      }
+    ]
+  },
+  {
+    "name": "IT Rules and Act"
+    "children": [],
+    "heading":"Community Broadcasters Guide to the IT Act and Rules"
+    "content": [
+      {
+	"tags":[],
+	"type":"text",
+	"data":"What is the IT Act and why should Community Radio broadcasters be aware of it?
+
+The Information Technology Act 2000 regulates various aspects of online communications and transactions. If you are a community radio broadcaster who uses the internet for any of your communication such as streaming content online, facebook page, web page you could fall under the definition of an intermediary and will be governed by the IT Act.
+
+The IT Act defines an intermediary under Sec. 2(w) any person who on behalf of another person receives, stores or transmits that message or provides any service with respect to that message. Intermediaries include ISP’s, search engines, webhosts, interactive websites such as facebook and twitter and even cyber cafes."
+      },
+      {
+	"tags":[],
+	"type":"text",
+	"data":"What are the liabilities under the IT Act that I need to be aware of? 
+
+There are two classes of liabilities under the IT Act. The first is the direct liability for any person who uses online communication networks. For instance Sec. 66A which has become infamous as a result of the cases filed against individuals who have posted messages on facebook or even liked other people;s messages have faced charges under this provision. 
+
+The IT Act makes it an offence to send any information that is grossly offensive or has menacing character; any information which he knows to be false, but for the purpose of causing annoyance, inconvenience, danger, obstruction, insult, injury, criminal intimidation, enmity, hatred or ill will, persistently by making use of such computer resource or a communication device, any electronic mail or electronic mail message for the purpose of causing annoyance or inconvenience or to deceive or to mislead the addressee or recipient about the origin of such messages.
+
+It is clear that these provisions are overly broad and can be subject to misuse and a number of them are currently being challenged in various courts of law.
+
+The second category of liability that you could face is as an intermediary who provides services to enable online communication.
+As a web service provider you could allow for people to post information, allow for citizen journalism etc. The content posted by your users could be illegal in various ways including being obscene, infringing copyright and in these cases despite the fact that you may not have generated the content yourself, you could be liable as an intermediary. For example, the Delhi High Court, in the Bazee Case held the website to be liable for the sale of a pornographic clip put up by one of its users."
+      },
+      {
+	"tags":[],
+	"type":"text",
+	"data":"Are there any protections available for intermediaries?
+
+The IT act allows for what are known as safe harbor provisions. These are provisions who exempt the intermediary from liability if they follow the procedures laid down in the Intermediary Liability Rules. Section 79 of the Information Technology Act is one such safe harbour provision in India which provides that intermediaries shall not be liable for any third party action if they are able to prove that the offence or contravention was committed without their knowledge or that they had exercised due diligence to prevent the commission of such offence or contravention. But this safe harbour has effectively been undone with the passing of the Information Technology (Intermediaries guidelines) Rules, 2011.
+The rules clarify what standard of due diligence has to be met by intermediaries and Sec. 3(2) of the rules obliges intermediaries to have rules and conditions of usage which ensure that users do not host, display, upload, modify, publish, transmit, update or share any information that is in contravention of the Section. This includes the all too familiar ones (defamatory, obscene, pornographic content) but also a whole host of new categories which could be invoked to restrict speech (“grossly harmful,” “blasphemous,” “harassing,” “hateful”).
+Sec. 3(4) of the rules provides that any intermediary who receives a notice by an aggrieved person about any violation of sub rule (2) will have to act within 36 hours and where applicable will ensure that the information is disabled. In the event that it fails to act or to respond, the intermediary cannot claim exemption for liability under Sec. 70 of the IT Act. It is worth noting that most intermediaries receive from hundreds to thousands of requests from individuals on a daily basis asking for the removal of objectionable material. The Centre for Internet and Society conducted a “sting operation” to determine whether the criteria, procedure and safeguards for administration of the takedowns as prescribed by the Rules lead to a chilling effect on free expression and in the course of the study, frivolous takedown notices were sent to seven intermediaries and their response to the notices was documented. Of the seven intermediaries to which takedown notices were sent, six over-complied with the notices, despite the apparent flaws in them."
+      }
+    ]
+  },
+  {
+    "name": "Copyright"
+    "children": [],
+    "heading":"Basics of Copyright Law for Community Radio Broadcasters"
+    "content": [
+      {
+	"tags":[],
+	"type":"text",
+	"data":"
+
+What is copyright?
+It is an exclusive right granted to the author of an original work (e.g., lyrics, movies, computer programmes, paintings and even an architectural building) for a limited period of time."
+      },
+      {
+	"tags":[],
+	"type":"text",
+	"data":"Why should we be concerned about copyright?
+
+As a radio broadcaster you may be concerned about copyright for the following reasons:
+
+a. If you want to broadcast content (music, plays, speeches) you will need the permission of the copyright owner to do so. This typically involves obtaining a license from the owner of the work 
+b. If you have generated the content yourself, you are the owner of the copyright in the work and can determine the nature of the use of such content
+"
+      },
+
+      {
+	"tags":[],
+	"type":"text",
+	"data":"If we are interested in sharing content between community radio stations is there a way to do so without having to ask for permission or paying high royalty?
+
+Yes, there is a model that allows for easy sharing of content. This is popularly called the copy left model that uses innovative licenses such as the creative commons license. Any person who licenses their work under a CC license allows for people to use their work on a non-commercial basis without needing to seek permission or having to pay royalty.
+"
+      },
+
+      {
+	"tags":[],
+	"type":"text",
+	"data":"Are we allowed to play commercial film music, and if so to what extent?
+
+If you want to play commercial music you will need to obtain a license from the owners or form collecting societies such as IPRS and PPL, but if you are using a segment of the music as a part of a program or towards educational purposes, you may use a limited segment of a song. However it should be noted that there are no defined rules about the portion of a song that may be used and hence such usage can only be determined on a case-to-case basis.
+"
+      },
+
+      {
+	"tags":[],
+	"type":"text",
+	"data":"Is there a formal requirement for the registration of copyright over our work?
+
+No. Acquisition of copyright is automatic and it does not require any formality. However, in the event that there is a dispute about ownership of a work, then a copyright registration certificate shall serve as prima facie evidence of valid ownership of copyright The usefulness of registering your copyright arises from the fact that many enforcement authorities including the police are often not well informed about the law, and tend to assume that no action can be taken without a registration certificate.
+The ministry has now made it easier for you to register your copyright by enabling electronic filings
+You can visit http://copyright.gov.in/UserRegistration/frmLoginPage.aspx to learn more about the process
+"
+      },
+]
+  },
+  {
+    "name": "CR Content Code"
+    "children": [],
+    "heading":"Content regulation and monitoring"
+    "content": [
+      {
+	"tags":[],
+	"type":"text",
+	"data":"All community radio stations (CRS) must adhere to the Programming and Advertising Code Prescribed for All India Radio. Under the code Community Radio stations must ensure that there is nothing their programmes which:
+
+a) Offends against good taste or decency;
+b) Contains criticism of friendly countries;
+c) Contains attack on religions or communities or visuals or words contemptuous of religious groups or which either promote or result in promoting communal discontent or disharmony;
+d) Contains anything obscene, defamatory, deliberate, false and suggestive
+innuendoes and half truths;
+e) Is likely to encourage or incite violence or contains anything against
+maintenance of law and order or which promote-anti-national attitudes;
+f) Contains anything amounting to contempt of court or anything affecting the
+integrity of the Nation;
+g) Contains aspersions against the dignity of the President/Vice President and the Judiciary;
+h) Criticises, maligns or slanders any individual in person or certain groups, segments of social, public and moral life of the country;
+i) Encourages superstition or blind belief;
+j) Denigrates women;
+k) Denigrates children.
+l) May present/depict/suggest as desirable the use of drugs including alcohol,
+narcotics and tobacco or may stereotype, incite, vilify or perpetuate hatred
+against or attempt to demean any person or group on the basis of ethnicity,
+nationality, race, gender, sexual preference, religion, age or physical or mental disability."
+      },
+      {
+	"tags":[],
+	"type":"text",
+	"data":"In addition to the programme and advertising code, Community Radio Stations must follow the content guidelines as laid out in the Policy Guidelines for Community Radio. 
+
+Under the CR Policy guidelines Community Radio Stations:
+1) Broadcast content should have an immediate relevance to the community. 
+2) At least 50% of programming should be generated with the participation of the community.
+3) Broadcast content should be in the local language. 
+4) CRS cannot broadcast any programmes which relate to news, current affairs or are political in nature.
+5) All programmes broadcasted must be preserved for three months (from the date of broadcast) by the CRS. 
+6) CRS should ensure that its programmes don’t offend the religious views and beliefs of people from any religion and they don’t exploit religious susceptibilities of the listeners."
+      },
+      {
+	"tags":[],
+	"type":"text",
+	"data":"If any of these regulations are violated Community Radio Stations can face the following penalties:
+
+In the case of the first violation: Temporary suspension of permission for operating the CRS for a period up to 1 month.
+In the case of second violation: Temporary suspension of permission for operating the CRS for a period up to 3 months.
+In the case of any subsequent violation: Permission to broadcast will be revokes and Permission Holder and its principal members will be liable for all actions under IPC, CrPC and other laws."
+      }
+]
+  },
+  {
+    "name": "Social Demographics",
+    "children": ["Research Data visualized and interpreted", "Partner Profiles", "Case Studies"],
+    "content": [
+      {
+	
+      }
+    ]
+  },
+  {
+    "name": "Research Data visualized and interpreted"
+    "children": [],
+    "content": []
+  },
+  {
+    "name": "Partner Profiles"
+    "children": ["Gurgaon ki awaz", "KumaonVani", "Radio Bundelkhand"],
+    "content": []
+  },
+  {
+    "name":"Gurgaon ki awaz",
+    "children":[],
+    "content":[
+      {
+	"tags":[],
+	"type":"text",
+	"data":"About:
+Guragonkiawaaz(GKA) is a community radio station set up by The Restoring Force (TRF) a registered Non Governmental Organisation (NGO) that works in the area of education and vocational training.GKA has been broadcasting on 107.8 FM since November 2009.The station is now broadcasting 22 hours a day and it reaches out to a listener population of almost 1.9 million people. "
+      },
+      {
+	"tags":[],
+	"type":"text",
+	"data":"Community:
+Gurgaon Ki Awaaz is located in UdhyogVihar and it reaches listeners within a radius of 8 to 10 kms. The station caters to over 75 villages and slum settlements in Gurgaon. Their primary audience is Hindi and Haryanvi speaking with a mix of migrant workers in the informal labour sector and communities that have been marginalized by the rapid urbanization of Gurgaon."
+      },
+      {
+	"tags":[],
+	"type":"text",
+	"data":"Programming :
+The programming at Gurgaon ki Awaaz is focused on the following key areas:
+i) Career Counseling and Livelihood
+ii) Health
+iii) Women’s empowerment through awareness and Microfinance
+iv) Migration and Inclusiveness
+v) Entertainment
+
+Here is a sample of their daily programme schedule.
+Music –
+Entertainment- Apni Pasand & Geetmala
+Careers – Hum Hongey Kamyaab
+Entrepreneurship – Apna Nazariya Apna Kaam
+Health – Swasth Gurgaon
+Migrants – Saara Aasmaan Hamara
+Cooking – Apni Rasoi
+Women’s Self Help Groups- Nari Shakti 
+Discussions on current issues - Baat cheet
+Financial inclusion, small savings
+Road Safety – Chalti Ka Naam Gaadi
+Feedback – Boley Dil Ki Baat"
+      }
+]
+  },
+  {
+    "name":"KumaonVani",
+    "children":[],
+    "content":[
+      {
+	"tags":[],
+	"type":"text",
+	"data":"About: Kumaon Vani is a community radio station that was set up by The Energy and Resources Institute (TERI) a not-for-profit research organization with the aim to bring together the local community across 20 villages close to Supi village in the valley of Kumaon. Kumaon Vani has been broadcasting on 90.40 FM since March 2010. The station is now broadcasting 8 hours a day and has a listener population of roughly 3 million people."
+      },
+      {
+	"tags":[],
+	"type":"text",
+	"data":"Community: KumaonVani is located in Mukteshwar and has a reach that is spread as far as 200 kms while reaching out to almost 500 villages. The primary audience of the station is Kumaoni and Hindi speaking and the majority of listeners are from the agricultural community."
+      }
+    ]
+  },
+  {
+    "name":"Radio Bundelkhand",
+    "children":[],
+    "content":[
+      {
+	{
+	"tags":[],
+	"type":"text",
+	"data":"Background
+Radio Bundelkhand @90.4 MHz broadcasts eight hours of programmes between 10:00 am – 2:00 pm and 2:00 pm – 6:00 pm."
+	},
+	{
+	"tags":[],
+	"type":"text",
+	"data":"About
+Radio Bundelkhand is an ICT-based community radio initiative started by Development Alternatives (DA), an India-based non-government organisation and jointly managed by the local community and DA. It acts as a sustainable and interactive platform for dialogue for the poor and the illiterate.
+
+Development Alternatives (DA) started in 1982 and has acted as a research and action organistation, deisigning and delivering eco-solutions to marginalised communities. 
+Their vison is: A world where every citizen can live a secure, healthy and fulfilling life, in harmony with nature. DA’s mission is to create sustainable livelihoods in large numbers. Development Alternatives Group has 5 organisations. The non-profit Societies, such as the flagship entity Development Alternatives and TARA (Technology and Action for Rural Advancement) are responsible for research, innovation, policy, incubation of green businesses and technical support services. The for-profit companies, such as DESI Power, TARA Machines and TARA Enviro are responsible for implementing the work of the DA Group at scale in business mode, all under the overall brand name of TARA. 
+
+Radio Bundelkhand is based at TARAgram Orchha, DA’s Technology Centre at Tikamgarh district of Madhya Pradesh. It is one of the early community radio stations in India. It started live tranmission on Oct 23, 2008 on the frequency 90.4Mhz. Radio Bundelkhnd reaches 140 villages in 2 districts ( Jhansi & Tikamgarh).  Transmission timings 10:00 – 14:00 – 16:00 -18:00."
+	},
+	{
+	  "tags":[],
+	  "type":"text",
+	  "data":"Languages of Broadcast: Bundeli, Simple Hindi (sparingly) with a local texture of language, which can be understood by the local community
+
+Community 
+1 Active Farmers
+2 Youth / Students
+3 Women/SHG Members
+4 School going children
+5 Senior citizen 
+6 Experts from various fields"
+	},
+	{
+	  "tags":[],
+	  "type":"text",
+	  "data":"List of programs
+1 Shubh Kal 
+2 Khet Khaliyan 
+3 MBMG/ Hello Saheli
+4 Ye hui na Baat 
+5 Hum Honge Kamyaab 
+6 Mujhe Haq Hai 
+Baat Nanhe Dilo Ki 
+Successful programs
+1 Shubh Kal – Behro Bhouji
+2 Save Water 
+3 Hamara Sarpanch Kaisa Ho
+4 Importance of Savings in our life
+5 MNREGS"
+	}
+      }
+    ]
+  },
+  {
+    "name": "Case Studies"
+    "children": [],
+    "content": []
+  }
+]
