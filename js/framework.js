@@ -377,14 +377,20 @@ M.checkTags = function(tags){
 // change all '-' to spaces and capitalize first letter of
 // every word
 M.humanReadable = function(str) {
-  return '' + str.replace('-', ' ').replace(/[^\s]+/g, function(str) {
+  if(typeof str !== "string") {
+    str = '';
+  }
+  return '' + str.replace(/[-]+/g, ' ').replace(/[^\s]+/g, function(str) {
     return str.substr(0,1).toUpperCase() + str.substr(1).toLowerCase();
   });
 };
 
-// change all spaces to '-'
+// change all spaces to '-' and everything to lowercase
 M.sanitize = function(str) {
-  return '' + str.replace(/ +/,'-').replace(/[^\s]+/g, function(str) {
+  if(typeof str !== "string") {
+    str = '';
+  }
+  return '' + str.replace(/[\s]+/g,'-').replace(/[^\s]+/g, function(str) {
     return str.toLowerCase();
   });
 };
