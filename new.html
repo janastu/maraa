@@ -1,5 +1,8 @@
+<!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8" />
+    <title> Maraa CR Portal </title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
   </head>
   <body>
@@ -19,9 +22,13 @@
     <script>
       window.M = window.M || {};
       $(document).ready(function() {
-        $.getJSON('data/maraa.json', function(data) {
-          M.site_content = data;
-          M.init();
+        $.ajax({
+          url: 'http://localhost/maraa/data/maraa2.json',
+          type: 'GET',
+          success: function(data) {
+            M.site_content = data;
+            M.init();
+          }
         });
       });
     </script>
@@ -38,6 +45,5 @@
         <a href="<%= link %>">Read More</a>
       </div>
     </script>
-
   </body>
 </html>

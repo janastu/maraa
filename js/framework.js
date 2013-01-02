@@ -1,51 +1,163 @@
 (function(M) {
 /* Defining Backbone models, collections and views */
 
-var text = Backbone.Model.extend({
-	defaults:{
+var Text = Backbone.Model.extend({
+	defaults: {
 		data:"",
 		tags:[]
 	},
-	initialize: function()
-	{
-		//this.set('data',data);
+	initialize: function() {
 	}
 });
 
-var image = Backbone.Model.extend({
-	defaults:{
+var TextView = Backbone.View.extend({
+  tagName: 'div',
+  className: '',
+
+  initialize: function() {
+    _.bindAll(this);
+    _.bind(this.render, this);
+  },
+  render: function(el) {
+    $(el).append(this.el);
+    $(this.el).html(this.model.get('data'));
+  }
+});
+
+var Table = Backbone.Model.extend({
+  defaults: {
+    tags: [],
+    data : {
+      th: [],
+      tr:[]
+    }
+  },
+  initialize: function() {
+  }
+});
+
+var TableView = Backbone.View.extend({
+  tagName: 'table',
+  className: 'table',
+  initialize: function() {
+    _.bindAll(this);
+    _.bind(this.render, this);
+  },
+  render: function(el) {
+    var heading = this.model.get('data').th;
+    var str = '<tr>';
+
+    for(var i = 0; i < heading.length; i++) {
+      str += '<th>' + heading[i] + '</th>';
+    }
+    str += '</tr>';
+
+    _.each(this.model.get('data').tr, function(row) {
+      str += '<tr>';
+      for(var i = 0; i < row.length; i++) {
+        if(row[i].match(/http.?:/)) {
+          console.log(row[i].match(/http:/))
+        }
+        str += '<td>'+ row[i] + '</td>';
+      }
+      str += '</tr>';
+    });
+
+    $(el).append(this.el);
+    $(this.el).html(str);
+  }
+});
+
+var Image = Backbone.Model.extend({
+	defaults: {
 		src:"",
 		tags:[]
 	},
-	initialize:function()
-	{
-//		this.set('src',src);
+	initialize:function() {
 	}
 });
 
+var ImageView = Backbone.View.extend({
+  tagName: 'image',
+  className: '',
 
-var video = Backbone.Model.extend({
-	defaults:{
+  initialize: function() {
+    _.bindAll(this);
+    _.bind(this.render, this);
+  },
+  render: function(el) {
+    $(el).append(this.el);
+    $(this.el).attr('src', this.model.get('src'));
+  }
+});
+
+
+var Video = Backbone.Model.extend({
+	defaults: {
 		src:"",
 		tags:[]
 	},
-	initialize:function()
-	{
-//		this.set('src',src);
+	initialize:function() {
 	}
-
 });
 
-var rss = Backbone.Model.extend({
-	defaults:{
+var VideoView = Backbone.View.extend({
+  initialize: function() {
+    _.bindAll(this);
+    _.bind(this.render, this);
+    // assuming cross-domain urls will have http in the src,
+    // so also assuming they are embedded flash urls,
+    // hence iframe
+    if(this.model.get('src').match('http')) {
+      this.tagName = 'iframe';
+    }
+    // otherwise, use html5 video tag, if the video is served
+    // from the same domain
+    else {
+      this.tagName = 'video';
+    }
+  },
+  render: function(el) {
+    $(el).append(this.el);
+    $(this.el).attr('src', this.model.get('src'));
+  }
+});
+
+var RSS = Backbone.Model.extend({
+	defaults: {
 		src:"",
 		tags:[]
 	},
-	initialize:function()
-	{
-//		this.set('src',src);
+	initialize:function() {
 	}
 });
+
+var RSSView = Backbone.View.extend({
+  el: '#feeds',
+  initialize: function() {
+    _.bindAll(this);
+    _.bind(this.render, this);
+  },
+  render: function() {
+    M.populateFeeds(this.model.get('src'));
+  }
+});
+
+var type_map;
+M.type_map = type_map = {
+  model : {
+    'text': Text,
+    'image': Image,
+    'video': Video,
+    'rss': RSS
+  },
+  view: {
+    'text': TextView,
+    'image': ImageView,
+    'video': VideoView,
+    'rss': RSSView
+  }
+};
 
 // var Media = Backbone.Model.extend({
 // 	defaults:{
@@ -55,20 +167,12 @@ var rss = Backbone.Model.extend({
 // }
 
 // });
-M.text = text;
-M.video = video;
-M.rss = rss;
-M.image = image;
 
-var Texts = Backbone.Collection.extend({model: text});
-var Images = Backbone.Collection.extend({model: image});
-var Videos = Backbone.Collection.extend({model: video});
-var RSSs = Backbone.Collection.extend({model: rss});
+var Texts = Backbone.Collection.extend({model: Text});
+var Images = Backbone.Collection.extend({model: Image});
+var Videos = Backbone.Collection.extend({model: Video});
+var RSSs = Backbone.Collection.extend({model: RSS});
 
-	M.Texts = Texts;
-	M.Images = Images;
-	M.Videos = Videos;
-	M.RSSs = RSSs;
 
 var Page = Backbone.Model.extend({
   defaults: {
@@ -90,38 +194,33 @@ var Pages = Backbone.Collection.extend({
 });
 
 var PageView = Backbone.View.extend({
+  tagName: 'div',
   className: 'page',
-    types: {
-      'image': '<img/>',
-      'text': '<div></div>'
-    },
-    initialize: function() {
-      _.bindAll(this);
-      //_.bind(this.render, this);
-      $('#content-container').append(this.el);
-      this.render();
-      $(this.el).hide();
-    },
-    render: function() {
-      _.each(this.model.get('content'), function(data) {
-        var elem = $(this.types[data['type']]);
-        if(data['src']) {
-          elem.attr('src', data['src']);
-        }
-        if(data['id']) {
-          elem.attr('id', data['id']);
-        }
-        if(data['type'] === 'rss') {
-          var template = _.template($('#news-template').html());
-          $('#'+this.model.id).html(template());
-          M.rss_link  = data['data'];
-        }
-        else {
-          elem.html(data['data']);
-        }
-        elem.appendTo(this.el);
-      }, this);
-    }
+  initialize: function() {
+    _.bindAll(this);
+    _.bind(this.render, this);
+    this.render();
+    $(this.el).hide();
+  },
+  render: function() {
+    $('#content-container').append(this.el);
+    var self = this;
+    _.each(this.model.get('content'), function(item) {
+      var view = type_map.view[item.get('type')];
+      if(!view) {
+        console.log('Error initing view', item);
+        return;
+      }
+      if(item.get('type') === 'rss') {
+        M.rss_view = new view({model: item});
+        $(self.el).append(_.template($('#news-template').html()));
+      }
+      else {
+        var item_view = new view({model: item});
+        item_view.render(self.el);
+      }
+    });
+  }
 });
 
 var AppView = Backbone.View.extend({
@@ -154,7 +253,7 @@ var AppRouter = Backbone.Router.extend({
   showPage: function(page) {
     $('.page').hide();
     if(page === 'news') {
-      M.populateFeeds(M.rss_link);
+      M.rss_view.render();
     }
     $('#'+page).show();
   }
@@ -162,50 +261,42 @@ var AppRouter = Backbone.Router.extend({
 
 /* Defining other necessary functions */
 M.init = function() {
+	M.tags = {}; //global tag cache
+  M.pages = new Pages(); //global collection of all pages
 
-	M.tags = {};
-	_.each(M.site_content,function(data){
-		_.each(data['content'],function(item){
-			if(item['type'] == 'image')
-			{
-				var x = new M.image({'src':item['src']});
-			}
-			else if(item['type'] == 'text')
-			{
-				var x = new M.text({'data':item['data']});
-			}
-			else if(item['type'] == 'video')
-			{
-				var x = new M.video({'src':item['src']});
-			}
-			else if(item['type'] == 'rss')
-			{
-				var x = new M.rss({'src':item['src']});
-			}
-			if(x)
-				M.createTagList(item,x);
+  // iterate through the JSON to intialize models and views
+	_.each(M.site_content, function(page) {
+    var new_page = new Page({
+      'name': page.name,
+      'children': page.children
+    });
+    var contents = [];
+		_.each(page.content, function(content) {
+      var Item = type_map.model[content.type];
+      if(!Item) {
+        console.log('Error initing item: ', content);
+        return;
+      }
+      var item = new Item(content);
+      contents.push(item);
 		});
-	});
-
-
-  M.pages = new Pages(), page_views = [];
-  _.each(M.site_content, function(page) {
-    var new_page = new Page(page);
+    new_page.set({content: contents});
     var new_page_view = new PageView({model: new_page,
       id: new_page.get('id')});
     M.pages.add(new_page);
-    page_views.push(new_page_view);
-  });
+	});
+ 
   M.appView = new AppView();
   M.appView.render();
   var app_router = new AppRouter();
   Backbone.history.start();
+  // start with index page
+  app_router.index();
 };
 
 //Helper method for making a list of id associated to tag
 	M.createTagList = function(item,x)
 	{
-		console.log(item);
 
 		for(var i in item['tags'])
 		{
@@ -221,11 +312,21 @@ M.init = function() {
 
 //create navigational links
 M.createNavigation = function() {
-  var links = M.pages.get('index').get('children');
+  var top_level = M.pages.get('index').get('children');
   $('<li class="active"><a href="#/index">Home</a></li>').appendTo('.nav');;
-  _.each(links, function(link) {
-    $('<li><a href="#/' + link + '">' +
-      M.humanReadable(link) + '</a></li>').appendTo('.nav');
+  _.each(top_level, function(child) {
+    child = M.sanitize(child);
+    console.log(child);
+    var page = M.pages.get(child).get('children');
+    console.log(page);
+    if(!page) {
+      li = '<li><a href="#/"' + page + '<a/></li>';
+    }
+    else {
+      li = '<li class="dropdown"';
+    }
+    //$('<li><a href="#/' + link + '">' +
+      //M.humanReadable(link) + '</a></li>').appendTo('.nav');
   });
 };
 
@@ -257,12 +358,7 @@ M.populateFeeds = function(rss_url) {
 
 /* Other helper functions */
 
-// change all spaces to '-'
-M.sanitize = function(str) {
-  return '' + str.replace(' ','-');
-};
-
-	M.contentList = []; //A list to hold out filtered content objects.
+M.contentList = []; //A list to hold out filtered content objects.
 
 //Check for the tags and return only those "content" objects which match a given tag.
 M.checkTags = function(tags){
@@ -283,6 +379,13 @@ M.checkTags = function(tags){
 M.humanReadable = function(str) {
   return '' + str.replace('-', ' ').replace(/[^\s]+/g, function(str) {
     return str.substr(0,1).toUpperCase() + str.substr(1).toLowerCase();
+  });
+};
+
+// change all spaces to '-'
+M.sanitize = function(str) {
+  return '' + str.replace(/ +/,'-').replace(/[^\s]+/g, function(str) {
+    return str.toLowerCase();
   });
 };
 

@@ -1,0 +1,190 @@
+[
+  {
+    "name": "index",
+    "children": ["Spectrum", "Funding", "Technology & Infrastructure", "Digital Content & Media", "Social Demographics"],
+    "content": [
+      {
+        
+      }
+    ]
+  },
+  {
+    "name": "Spectrum",
+    "children": ["License Area", "Channel Spacing", "Frequencies available for CR", "Policy making and governing institutions"],
+    "content": [
+      {
+        
+      }
+    ]
+  },
+  {
+    "name": "License Area",
+    "children": [],
+    "content": []
+  },
+  {
+    "name": "Channel Spacing",
+    "children": [],
+    "content": []
+  },
+  {
+    "name": "Frequencies available for CR",
+    "children": [],
+    "content": []
+  },
+  {
+    "name": "Policy making and governing institutions",
+    "children": [],
+    "content": [
+      {
+        "tags": [],
+        "type": "table",
+        "data": {
+          "th": ["Country", "Regulator", "Governing Instutions"],
+          "tr": [
+            ["India", "TRAI [http://trai.gov.in]", "Ministry of Information and Broadcasting [http://www.mib.nic.in/]"],
+            ["United States", "The Federal Communications Commission [http://www.fcc.gov/] The Federal Communications Commission regulates interstate and international communications by radio, television, wire, satellite and cable in all 50 states, the District of Columbia and U.S. territories.", ""],
+            ["United Kingdom", "Ofcom (Independent regulator) [http://www.ofcom.org.uk/]", "Ofcom(is responsible for the management, regulation, assignment and licensing of the electromagnetic spectrum in the UK, and licenses portions of it for use in TV and radio broadcasts, mobile phone transmissions, private communications networks, wireless devices)"],
+            ["Germany", "Germany is a federal republic consisting of 16 states (Bundes-länder).  The federation has no jurisdiction in the broadcasting sector. Each of the 16 states has enacted its own broadcasting laws. The Inter State Agreement serves to harmonise state law on all the major aspects of broadcasting. [http://www.die-medienanstalten.de/profile.html]", ""],
+            ["South Africa", "ICASA (The Independent Communications Authority of South Africa) [https://www.icasa.org.za/]", "Department of Communications (It is responsible for overseeing the South African communications, telecommunications and broadcasting industries) [http://www.doc.gov.za/]"],
+            ["Canada", "CRTC (Canadian Radio-television and Telecommunications Commission) [http://www.crtc.gc.ca/eng/backgrnd/brochures/b19903.htm] Parliament has given the CRTC the job of regulating and supervising the broadcasting and telecommunications systems in Canada.", "Department of Canadian Heritage or Canadian Heritage [http://www.canadianheritage.gc.ca/]"],
+            ["Kenya", "CCK (Communications Commission of Kenya ) [http://www.cck.go.ke/] The Communications Commission of Kenya (CCK) is the regulatory authority for the communications sector in Kenya and is responsible for facilitating the development of the information and communications sectors (including broadcasting, multimedia, telecommunications and postal services) and electronic commerce.", "Ministry of Information & Communication [http://www.statehousekenya.go.ke/government/information.htm]"],
+            ["Indonesia", "KPI (The Indonesian Broadcasting Commission) [http://www.kpi.go.id/english/index.php?option=com_content&view=article&id=2&Itemid=20]", "Ministry of Communication & Informatics [http://kominfo.go.id/]"],
+            ["Nepal", "Ministry of Information & Communication [http://www.moic.gov.np/index.php]", "Ministry of Information & Communications (MOIC)"],
+            ["Australia", "ACMA (The Australian Communications and Media Authority) [http://www.acma.gov.au/WEB/STANDARD/pc=IND_LIC_DIR]", "Department of Broadband Communications & The Digital Economy [http://www.dbcde.gov.au/home]"],
+            ["Japan", "Ministry of Internal Affairs and Communications (MIC) [http://www.soumu.go.jp/english/]", "Ministry of Internal Affairs and Communications (MIC) [http://www.soumu.go.jp/english/]"],
+            ["Nigeria", "National Broadcasting Commission (The Act of the National Assembly empowers the Commission, to carry out a number of duties, some of which include, licensing monitoring, regulating and conducting research in broadcasting in Nigeria.) [http://www.nbc.gov.ng/ourmandate.php]", "Federal Ministry of Information [http://fmi.gov.ng/aboutus/]"],
+            ["Brazil", "Agência Nacional de Telecomunicações - Anatel (Brazilian Agency of Telecommunications) [http://www.anatel.gov.br/Portal/exibirPortalInternet.do] The Ministry of Communications has given Anatel the powers of granting, regulation and supervision over telecommunications and a great technical expertise and other material assets.", "Ministério das Comunicações (Ministry of Communcations) [http://www.mc.gov.br/]"]
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Funding",
+    "children": ["Funding Institutions", "Community Radio Support Fund in India"],
+    "content": [
+      {
+        
+      }
+    ]
+  },
+  {
+    "name": "Funding Institutions",
+    "children": [],
+    "content": []
+  },
+  {
+    "name": "Community Radio Support Fund in India",
+    "children": [],
+    "content": []
+  },
+  {
+    "name": "Technology & Infrastructure",
+    "children": ["Transmission System", "Telephony", "Internet"],
+    "content": []
+  },
+  {
+    "name": "Transmission System",
+    "children": ["FM Transmitter", "Antenna"],
+    "content": []
+  },
+  {
+    "name": "FM Transmitter",
+    "children": [],
+    "content": []
+  },
+  {
+    "name": "Antenna",
+    "children": [],
+    "content": []
+  },
+  {
+    "name": "Telephony",
+    "children": ["Hybrid", "IVR", "SMS"],
+    "content": []
+  },
+  {
+    "name": "Hybrid",
+    "children": [],
+    "content": []
+  },
+  {
+    "name": "IVR",
+    "children": [],
+    "content": []
+  },
+  {
+    "name": "SMS",
+    "children": [],
+    "content": []
+  },
+  {
+    "name": "Internet",
+    "children": ["Streaming", "Podcast", "Social Media"],
+    "content": []
+  },
+  {
+    "name": "Streaming",
+    "children": [],
+    "content": []
+  },
+  {
+    "name": "Podcast",
+    "children": [],
+    "content": []
+  },
+  {
+    "name": "Social Media",
+    "children": [],
+    "content": []
+  },
+  {
+    "name": "Digital Content & Media",
+    "children": ["IT Rules and Act", "Copyright", "CR Content Code"],
+    "content": [
+      {
+        
+      }
+    ]
+  },
+  {
+    "name": "IT Rules and Act",
+    "children": [],
+    "content": []
+  },
+  {
+    "name": "Copyright",
+    "children": [],
+    "content": []
+  },
+  {
+    "name": "CR Content Code",
+    "children": [],
+    "content": []
+  },
+  {
+    "name": "Social Demographics",
+    "children": ["Research Data visualized and interpreted", "Partner Profiles", "Case Studies"],
+    "content": [
+      {
+        
+      }
+    ]
+  },
+  {
+    "name": "Research Data visualized and interpreted",
+    "children": [],
+    "content": []
+  },
+  {
+    "name": "Partner Profiles",
+    "children": [],
+    "content": []
+  },
+  {
+    "name": "Case Studies",
+    "children": [],
+    "content": []
+  }
+]
