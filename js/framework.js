@@ -149,13 +149,15 @@ M.type_map = type_map = {
     'text': Text,
     'image': Image,
     'video': Video,
-    'rss': RSS
+    'rss': RSS,
+    'table': Table
   },
   view: {
     'text': TextView,
     'image': ImageView,
     'video': VideoView,
-    'rss': RSSView
+    'rss': RSSView,
+    'table': TableView
   }
 };
 
@@ -256,6 +258,7 @@ var AppRouter = Backbone.Router.extend({
       M.rss_view.render();
     }
     $('#'+page).show();
+    $('.'+page).show();
   }
 });
 
@@ -291,7 +294,21 @@ M.init = function() {
   var app_router = new AppRouter();
   Backbone.history.start();
   // start with index page
-  app_router.index();
+  //app_router.index();
+  M.simHeir();
+};
+
+// hack to simulate heirarchy among the page views
+// basically add the parent id as class in all of its children
+// elements.
+M.simHeir = function() {
+  _.each(M.pages.models, function(page) {
+    if(page.id == 'index') return;
+    _.each(page.get('children'), function(child) {
+      child = M.sanitize(child);
+      $('#'+child).addClass(page.id);
+    });
+  });
 };
 
 //Helper method for making a list of id associated to tag
@@ -320,7 +337,7 @@ M.createNavigation = function() {
     var page = M.pages.get(child).get('children');
     console.log(page);
     if(!page) {
-      li = '<li><a href="#/"' + page + '<a/></li>';
+      li = '<li><a href="#/"' + child + '<a/></li>';
     }
     else {
       li = '<li class="dropdown"';
@@ -391,7 +408,8 @@ M.sanitize = function(str) {
     str = '';
   }
   return '' + str.replace(/[\s]+/g,'-').replace(/[^\s]+/g, function(str) {
-    return str.toLowerCase();
+    //TODO: handle special characters!
+    return str.replace('&', 'and').toLowerCase();
   });
 };
 
