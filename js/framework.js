@@ -258,7 +258,7 @@ var AppRouter = Backbone.Router.extend({
       M.rss_view.render();
     }
     $('#'+page).show();
-    //$('.'+page).show();
+    $('.'+page).show();
   }
 });
 
@@ -333,11 +333,9 @@ M.createNavigation = function() {
   $('<li class="active"><a href="#/index">Home</a></li>').appendTo('.nav');;
   _.each(top_level, function(child) {
     child = M.sanitize(child);
-    console.log(child);
     var children = M.pages.get(child).get('children');
     var page = M.pages.get(child);
     var dropdown_template = _.template($('#nav-dropdown-template').html());
-    console.log(children);
     if(!children) {
       li = '<li><a href="#/' + child + '">'+ M.humanReadable(child) +'</a></li>';
     }
@@ -348,7 +346,6 @@ M.createNavigation = function() {
         list: _.map(children, M.humanReadable)
       });
     }
-    console.log(li);
     $(li).appendTo('.nav');
   });
 };
