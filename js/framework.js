@@ -56,7 +56,7 @@ var TableView = Backbone.View.extend({
       str += '<tr>';
       for(var i = 0; i < row.length; i++) {
         if(row[i].match(/http.?:/)) {
-          console.log(row[i].match(/http:/))
+          //console.log(row[i].match(/http:/))
         }
         str += '<td>'+ row[i] + '</td>';
       }
@@ -258,7 +258,7 @@ var AppRouter = Backbone.Router.extend({
       M.rss_view.render();
     }
     $('#'+page).show();
-    $('.'+page).show();
+    //$('.'+page).show();
   }
 });
 
@@ -334,16 +334,22 @@ M.createNavigation = function() {
   _.each(top_level, function(child) {
     child = M.sanitize(child);
     console.log(child);
-    var page = M.pages.get(child).get('children');
-    console.log(page);
-    if(!page) {
-      li = '<li><a href="#/"' + child + '<a/></li>';
+    var children = M.pages.get(child).get('children');
+    var page = M.pages.get(child);
+    var dropdown_template = _.template($('#nav-dropdown-template').html());
+    console.log(children);
+    if(!children) {
+      li = '<li><a href="#/' + child + '">'+ M.humanReadable(child) +'</a></li>';
     }
     else {
-      li = '<li class="dropdown"';
+      li = dropdown_template({
+        //no: page.cid,
+        name: M.humanReadable(page.get('name')),
+        list: _.map(children, M.humanReadable)
+      });
     }
-    //$('<li><a href="#/' + link + '">' +
-      //M.humanReadable(link) + '</a></li>').appendTo('.nav');
+    console.log(li);
+    $(li).appendTo('.nav');
   });
 };
 
