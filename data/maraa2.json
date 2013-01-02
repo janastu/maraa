@@ -170,9 +170,9 @@
     ]
   },
   {
-    "name": "Copyright"
+    "name": "Copyright",
     "children": [],
-    "heading":"Basics of Copyright Law for Community Radio Broadcasters"
+    "heading":"Basics of Copyright Law for Community Radio Broadcasters",
     "content": [
       {
 	"tags":[],
@@ -201,13 +201,13 @@
 	"tags":[],
 	"type":"text",
 	"data":"Is there a formal requirement for the registration of copyright over our work?  No. Acquisition of copyright is automatic and it does not require any formality. However, in the event that there is a dispute about ownership of a work, then a copyright registration certificate shall serve as prima facie evidence of valid ownership of copyright The usefulness of registering your copyright arises from the fact that many enforcement authorities including the police are often not well informed about the law, and tend to assume that no action can be taken without a registration certificate.  The ministry has now made it easier for you to register your copyright by enabling electronic filings.  You can visit http://copyright.gov.in/UserRegistration/frmLoginPage.aspx to learn more about the process."
-      },
+      }
 ]
   },
   {
-    "name": "CR Content Code"
+    "name": "CR Content Code",
     "children": [],
-    "heading":"Content regulation and monitoring"
+    "heading":"Content regulation and monitoring",
     "content": [
       {
 	"tags":[],
@@ -292,13 +292,12 @@ Gurgaon Ki Awaaz is located in UdhyogVihar and it reaches listeners within a rad
 	{
 	"tags":[],
 	"type":"text",
-	"data":"Background
-Radio Bundelkhand @90.4 MHz broadcasts eight hours of programmes between 10:00 am – 2:00 pm and 2:00 pm – 6:00 pm."
+	"data":"Background: Radio Bundelkhand @90.4 MHz broadcasts eight hours of programmes between 10:00 am – 2:00 pm and 2:00 pm – 6:00 pm."
 	},
 	{
 	"tags":[],
 	"type":"text",
-	"data":"About Radio Bundelkhand is an ICT-based community radio initiative started by Development Alternatives (DA), an India-based non-government organisation and jointly managed by the local community and DA. It acts as a sustainable and interactive platform for dialogue for the poor and the illiterate.  Development Alternatives (DA) started in 1982 and has acted as a research and action organistation, deisigning and delivering eco-solutions to marginalised communities.  Their vison is: A world where every citizen can live a secure, healthy and fulfilling life, in harmony with nature. DA’s mission is to create sustainable livelihoods in large numbers. Development Alternatives Group has 5 organisations. The non-profit Societies, such as the flagship entity Development Alternatives and TARA (Technology and Action for Rural Advancement) are responsible for research, innovation, policy, incubation of green businesses and technical support services. The for-profit companies, such as DESI Power, TARA Machines and TARA Enviro are responsible for implementing the work of the DA Group at scale in business mode, all under the overall brand name of TARA.   Radio Bundelkhand is based at TARAgram Orchha, DA’s Technology Centre at Tikamgarh district of Madhya Pradesh. It is one of the early community radio stations in India. It started live tranmission on Oct 23, 2008 on the frequency 90.4Mhz. Radio Bundelkhnd reaches 140 villages in 2 districts ( Jhansi & Tikamgarh).  Transmission timings 10:00 – 14:00 – 16:00 -18:00."
+	"data":"About: Radio Bundelkhand is an ICT-based community radio initiative started by Development Alternatives (DA), an India-based non-government organisation and jointly managed by the local community and DA. It acts as a sustainable and interactive platform for dialogue for the poor and the illiterate.  Development Alternatives (DA) started in 1982 and has acted as a research and action organistation, deisigning and delivering eco-solutions to marginalised communities.  Their vison is: A world where every citizen can live a secure, healthy and fulfilling life, in harmony with nature. DA’s mission is to create sustainable livelihoods in large numbers. Development Alternatives Group has 5 organisations. The non-profit Societies, such as the flagship entity Development Alternatives and TARA (Technology and Action for Rural Advancement) are responsible for research, innovation, policy, incubation of green businesses and technical support services. The for-profit companies, such as DESI Power, TARA Machines and TARA Enviro are responsible for implementing the work of the DA Group at scale in business mode, all under the overall brand name of TARA.   Radio Bundelkhand is based at TARAgram Orchha, DA’s Technology Centre at Tikamgarh district of Madhya Pradesh. It is one of the early community radio stations in India. It started live tranmission on Oct 23, 2008 on the frequency 90.4Mhz. Radio Bundelkhnd reaches 140 villages in 2 districts ( Jhansi & Tikamgarh).  Transmission timings 10:00 – 14:00 – 16:00 -18:00."
 	},
 	{
 	  "tags":[],
