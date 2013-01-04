@@ -34,6 +34,7 @@
   },
   {
     "name": "Policy making and governing institutions",
+    "title": "Policy makers and bodies in different countries",
     "children": [],
     "content": [
       {
@@ -150,64 +151,72 @@
   {
     "name": "IT Rules and Act",
     "children": [],
-    "heading":"Community Broadcasters Guide to the IT Act and Rules",
+    "title":"Community Broadcasters Guide to the IT Act and Rules",
     "content": [
       {
 				"tags":[],
 				"type":"text",
-				"data":"What is the IT Act and why should Community Radio broadcasters be aware of it?  The Information Technology Act 2000 regulates various aspects of online communications and transactions. If you are a community radio broadcaster who uses the internet for any of your communication such as streaming content online, facebook page, web page you could fall under the definition of an intermediary and will be governed by the IT Act.The IT Act defines an intermediary under Sec. 2(w) any person who on behalf of another person receives, stores or transmits that message or provides any service with respect to that message. Intermediaries include ISP’s, search engines, webhosts, interactive websites such as facebook and twitter and even cyber cafes."
+        "title": "What is the IT Act and why should Community Radio broadcasters be aware of it?",
+				"data": "The Information Technology Act 2000 regulates various aspects of online communications and transactions. If you are a community radio broadcaster who uses the internet for any of your communication such as streaming content online, facebook page, web page you could fall under the definition of an intermediary and will be governed by the IT Act.The IT Act defines an intermediary under Sec. 2(w) any person who on behalf of another person receives, stores or transmits that message or provides any service with respect to that message. Intermediaries include ISP’s, search engines, webhosts, interactive websites such as facebook and twitter and even cyber cafes."
       },
       {
 				"tags":[],
 				"type":"text",
-				"data":"What are the liabilities under the IT Act that I need to be aware of?  There are two classes of liabilities under the IT Act. The first is the direct liability for any person who uses online communication networks. For instance Sec. 66A which has become infamous as a result of the cases filed against individuals who have posted messages on facebook or even liked other people;s messages have faced charges under this provision.  The IT Act makes it an offence to send any information that is grossly offensive or has menacing character; any information which he knows to be false, but for the purpose of causing annoyance, inconvenience, danger, obstruction, insult, injury, criminal intimidation, enmity, hatred or ill will, persistently by making use of such computer resource or a communication device, any electronic mail or electronic mail message for the purpose of causing annoyance or inconvenience or to deceive or to mislead the addressee or recipient about the origin of such messages.  It is clear that these provisions are overly broad and can be subject to misuse and a number of them are currently being challenged in various courts of law.  The second category of liability that you could face is as an intermediary who provides services to enable online communication.  As a web service provider you could allow for people to post information, allow for citizen journalism etc. The content posted by your users could be illegal in various ways including being obscene, infringing copyright and in these cases despite the fact that you may not have generated the content yourself, you could be liable as an intermediary. For example, the Delhi High Court, in the Bazee Case held the website to be liable for the sale of a pornographic clip put up by one of its users."
+        "title": "What are the liabilities under the IT Act that I need to be aware of?",
+				"data":"There are two classes of liabilities under the IT Act. The first is the direct liability for any person who uses online communication networks. For instance Sec. 66A which has become infamous as a result of the cases filed against individuals who have posted messages on facebook or even liked other people;s messages have faced charges under this provision.  The IT Act makes it an offence to send any information that is grossly offensive or has menacing character; any information which he knows to be false, but for the purpose of causing annoyance, inconvenience, danger, obstruction, insult, injury, criminal intimidation, enmity, hatred or ill will, persistently by making use of such computer resource or a communication device, any electronic mail or electronic mail message for the purpose of causing annoyance or inconvenience or to deceive or to mislead the addressee or recipient about the origin of such messages.  It is clear that these provisions are overly broad and can be subject to misuse and a number of them are currently being challenged in various courts of law.  The second category of liability that you could face is as an intermediary who provides services to enable online communication.  As a web service provider you could allow for people to post information, allow for citizen journalism etc. The content posted by your users could be illegal in various ways including being obscene, infringing copyright and in these cases despite the fact that you may not have generated the content yourself, you could be liable as an intermediary. For example, the Delhi High Court, in the Bazee Case held the website to be liable for the sale of a pornographic clip put up by one of its users."
       },
       {
 				"tags":[],
 				"type":"text",
-				"data":"Are there any protections available for intermediaries?  The IT act allows for what are known as safe harbor provisions. These are provisions who exempt the intermediary from liability if they follow the procedures laid down in the Intermediary Liability Rules. Section 79 of the Information Technology Act is one such safe harbour provision in India which provides that intermediaries shall not be liable for any third party action if they are able to prove that the offence or contravention was committed without their knowledge or that they had exercised due diligence to prevent the commission of such offence or contravention. But this safe harbour has effectively been undone with the passing of the Information Technology (Intermediaries guidelines) Rules, 2011.  The rules clarify what standard of due diligence has to be met by intermediaries and Sec. 3(2) of the rules obliges intermediaries to have rules and conditions of usage which ensure that users do not host, display, upload, modify, publish, transmit, update or share any information that is in contravention of the Section. This includes the all too familiar ones (defamatory, obscene, pornographic content) but also a whole host of new categories which could be invoked to restrict speech (“grossly harmful,” “blasphemous,” “harassing,” “hateful”).  Sec. 3(4) of the rules provides that any intermediary who receives a notice by an aggrieved person about any violation of sub rule (2) will have to act within 36 hours and where applicable will ensure that the information is disabled. In the event that it fails to act or to respond, the intermediary cannot claim exemption for liability under Sec. 70 of the IT Act. It is worth noting that most intermediaries receive from hundreds to thousands of requests from individuals on a daily basis asking for the removal of objectionable material. The Centre for Internet and Society conducted a “sting operation” to determine whether the criteria, procedure and safeguards for administration of the takedowns as prescribed by the Rules lead to a chilling effect on free expression and in the course of the study, frivolous takedown notices were sent to seven intermediaries and their response to the notices was documented. Of the seven intermediaries to which takedown notices were sent, six over-complied with the notices, despite the apparent flaws in them."
+        "title": "Are there any protections available for intermediaries?",
+				"data":"The IT act allows for what are known as safe harbor provisions. These are provisions who exempt the intermediary from liability if they follow the procedures laid down in the Intermediary Liability Rules. Section 79 of the Information Technology Act is one such safe harbour provision in India which provides that intermediaries shall not be liable for any third party action if they are able to prove that the offence or contravention was committed without their knowledge or that they had exercised due diligence to prevent the commission of such offence or contravention. But this safe harbour has effectively been undone with the passing of the Information Technology (Intermediaries guidelines) Rules, 2011.  The rules clarify what standard of due diligence has to be met by intermediaries and Sec. 3(2) of the rules obliges intermediaries to have rules and conditions of usage which ensure that users do not host, display, upload, modify, publish, transmit, update or share any information that is in contravention of the Section. This includes the all too familiar ones (defamatory, obscene, pornographic content) but also a whole host of new categories which could be invoked to restrict speech (“grossly harmful,” “blasphemous,” “harassing,” “hateful”).  Sec. 3(4) of the rules provides that any intermediary who receives a notice by an aggrieved person about any violation of sub rule (2) will have to act within 36 hours and where applicable will ensure that the information is disabled. In the event that it fails to act or to respond, the intermediary cannot claim exemption for liability under Sec. 70 of the IT Act. It is worth noting that most intermediaries receive from hundreds to thousands of requests from individuals on a daily basis asking for the removal of objectionable material. The Centre for Internet and Society conducted a “sting operation” to determine whether the criteria, procedure and safeguards for administration of the takedowns as prescribed by the Rules lead to a chilling effect on free expression and in the course of the study, frivolous takedown notices were sent to seven intermediaries and their response to the notices was documented. Of the seven intermediaries to which takedown notices were sent, six over-complied with the notices, despite the apparent flaws in them."
       }
     ]
   },
   {
     "name": "Copyright",
     "children": [],
-    "heading":"Basics of Copyright Law for Community Radio Broadcasters",
+    "title":"Basics of Copyright Law for Community Radio Broadcasters",
     "content": [
       {
 				"tags":[],
 				"type":"text",
-				"data":"What is copyright?  It is an exclusive right granted to the author of an original work (e.g., lyrics, movies, computer programmes, paintings and even an architectural building) for a limited period of time."
+        "title": "What is copyright?",
+				"data":"It is an exclusive right granted to the author of an original work (e.g., lyrics, movies, computer programmes, paintings and even an architectural building) for a limited period of time."
       },
       {
 				"tags":[],
 				"type":"text",
-				"data":"Why should we be concerned about copyright?  As a radio broadcaster you may be concerned about copyright for the following reasons:  a. If you want to broadcast content (music, plays, speeches) you will need the permission of the copyright owner to do so. This typically involves obtaining a license from the owner of the work.  b. If you have generated the content yourself, you are the owner of the copyright in the work and can determine the nature of the use of such content"
+        "title": "Why should we be concerned about copyright?",
+				"data":"As a radio broadcaster you may be concerned about copyright for the following reasons:  a. If you want to broadcast content (music, plays, speeches) you will need the permission of the copyright owner to do so. This typically involves obtaining a license from the owner of the work.  b. If you have generated the content yourself, you are the owner of the copyright in the work and can determine the nature of the use of such content"
 			},
 
       {
 				"tags":[],
 				"type":"text",
-				"data":"If we are interested in sharing content between community radio stations is there a way to do so without having to ask for permission or paying high royalty?Yes, there is a model that allows for easy sharing of content. This is popularly called the copy left model that uses innovative licenses such as the creative commons license. Any person who licenses their work under a CC license allows for people to use their work on a non-commercial basis without needing to seek permission or having to pay royalty."
+        "title": "If we are interested in sharing content between community radio stations is there a way to do so without having to ask for permission or paying high royalty?",
+				"data":"Yes, there is a model that allows for easy sharing of content. This is popularly called the copy left model that uses innovative licenses such as the creative commons license. Any person who licenses their work under a CC license allows for people to use their work on a non-commercial basis without needing to seek permission or having to pay royalty."
       },
 
       {
 				"tags":[],
 				"type":"text",
-				"data":"Are we allowed to play commercial film music, and if so to what extent?  If you want to play commercial music you will need to obtain a license from the owners or form collecting societies such as IPRS and PPL, but if you are using a segment of the music as a part of a program or towards educational purposes, you may use a limited segment of a song. However it should be noted that there are no defined rules about the portion of a song that may be used and hence such usage can only be determined on a case-to-case basis."
+        "title": "Are we allowed to play commercial film music, and if so to what extent?",
+				"data":"If you want to play commercial music you will need to obtain a license from the owners or form collecting societies such as IPRS and PPL, but if you are using a segment of the music as a part of a program or towards educational purposes, you may use a limited segment of a song. However it should be noted that there are no defined rules about the portion of a song that may be used and hence such usage can only be determined on a case-to-case basis."
       },
 
       {
 				"tags":[],
 				"type":"text",
-				"data":"Is there a formal requirement for the registration of copyright over our work?  No. Acquisition of copyright is automatic and it does not require any formality. However, in the event that there is a dispute about ownership of a work, then a copyright registration certificate shall serve as prima facie evidence of valid ownership of copyright The usefulness of registering your copyright arises from the fact that many enforcement authorities including the police are often not well informed about the law, and tend to assume that no action can be taken without a registration certificate.  The ministry has now made it easier for you to register your copyright by enabling electronic filings.  You can visit http://copyright.gov.in/UserRegistration/frmLoginPage.aspx to learn more about the process."
+        "title": "Is there a formal requirement for the registration of copyright over our work?",
+				"data":"No. Acquisition of copyright is automatic and it does not require any formality. However, in the event that there is a dispute about ownership of a work, then a copyright registration certificate shall serve as prima facie evidence of valid ownership of copyright The usefulness of registering your copyright arises from the fact that many enforcement authorities including the police are often not well informed about the law, and tend to assume that no action can be taken without a registration certificate.  The ministry has now made it easier for you to register your copyright by enabling electronic filings.  You can visit http://copyright.gov.in/UserRegistration/frmLoginPage.aspx to learn more about the process."
       }
 		]
   },
   {
     "name": "CR Content Code",
     "children": [],
-    "heading":"Content regulation and monitoring",
+    "title":"Content regulation and monitoring",
     "content": [
       {
 				"tags":[],

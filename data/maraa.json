@@ -7,23 +7,47 @@
         "tags": ["community radio", "antenna"],
         "type": "image",
         "src" : "./img/frontpage/antenna.jpg",
-        "data": "",
         "id": "antenna",
-        "color": "#FAEBD7"
+        "attr": {
+          "alt": "Antenna",
+          "class": "thumb",
+          "color": "#FAEBD7"
+        }
       },
       {
         "tags": ["community radio", "signals"],
         "type": "image",
         "src" : "./img/frontpage/signals.jpg",
         "id": "signals",
-        "color": "#FAEBD7"
+        "attr": {
+          "alt": "signals",
+          "class": "thumb",
+          "color": "#FAEBD7"
+        }
       },
       {
         "tags": ["community radio", "on air"],
         "type": "image",
         "src" : "./img/frontpage/on-air.jpg",
         "id": "air",
-        "color": "#A9A9A9"
+        "attr": {
+          "alt": "On Air",
+          "class": "thumb",
+          "color": "#A9A9A9"
+        }
+      },
+      {
+        "tags": [],
+        "type": "plugin",
+        "src": "js/zoomer.js",
+        "callback": "$('#index').Zoomer({speedView:200, speedRemove:400, altAnim:true, speedTitle:400, debug:true});",
+        "data": {}
+      },
+      {
+        "tags": [],
+        "type": "plugin",
+        "src": "css/zoomer.css",
+        "data": {}
       }
     ]
   },
@@ -80,17 +104,20 @@
       {
         "tags": ["contact us", "contact"],
         "type": "text",
-        "data": "Phone: 80 2529 7843"
+        "title": "Phone",
+        "data": "80 2529 7843"
       },
       {
         "tags": ["contact us", "contact"],
         "type": "text",
-        "data": "Email: info@maraa.in"
+        "title": "Email",
+        "data": "info@maraa.in"
       },
       {
         "tags": ["contact us", "contact"],
         "type": "text",
-        "data": "Address: II floor, No.3, 4th Cross, Michaelpalya 2nd Stage Bangalore, Karnataka, India 560075"
+        "title": "Address",
+        "data": "II floor, No.3, 4th Cross, Michaelpalya 2nd Stage Bangalore, Karnataka, India 560075"
       }
     ]
   }

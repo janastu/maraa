@@ -24,7 +24,7 @@
       window.M = window.M || {};
       $(document).ready(function() {
         $.ajax({
-          url: 'http://localhost/maraa/data/maraa2.json',
+          url: 'http://localhost/maraa/data/maraa.json',
           type: 'GET',
           success: function(data) {
             M.site_content = data;
@@ -35,6 +35,8 @@
     </script>
     <script src="js/framework.js"></script>
     <script src="js/jquery.jfeed.js"></script>
+
+    <!-- Underscore templates -->
     <script type="text/template" id="news-template">
       <div id="feeds">
         <img src="img/ajax-loader.gif" id="feeds-loader"/>
@@ -46,7 +48,6 @@
         <a href="<%= link %>">Read More</a>
       </div>
     </script>
-
     <script type="text/template" id="nav-dropdown-template"> 
       <li class="dropdown">
       <a class="dropdown-toggle" data-toggle="dropdown" href="#/<%= M.sanitize(name) %>"
@@ -63,6 +64,11 @@
         %>
       </ul>
       </li>
+    </script>
+    <script type="text/template" id="image-view-template">
+      <div class="img-wrapper">
+        <img src="<%= src %>">
+      </div>
     </script>
   </body>
 </html>

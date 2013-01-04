@@ -1,32 +1,42 @@
 (function(M) {
 /* Defining Backbone models, collections and views */
 
-var Text = Backbone.Model.extend({
-	defaults: {
-		data:"",
-		tags:[]
-	},
-	initialize: function() {
-	}
+var BaseType = Backbone.Model.extend({
+  defaults: {
+    tags: [],
+    title: "",
+    attr: {}
+  },
+  initialize: function() {
+  }
+});
+
+var Text = BaseType.extend({
+  defaults: {
+    data: "",
+  },
+  initialize: function() {
+  }
 });
 
 var TextView = Backbone.View.extend({
   tagName: 'div',
   className: '',
-
   initialize: function() {
     _.bindAll(this);
     _.bind(this.render, this);
   },
   render: function(el) {
     $(el).append(this.el);
-    $(this.el).html(this.model.get('data'));
+    var str = '<h4>'+ this.model.get('title') +'</h4> <p>' +
+      this.model.get('data') + '</p>';
+    $(this.el).html(str);
+    M.appendAttrs(this.model, this.el);
   }
 });
 
-var Table = Backbone.Model.extend({
+var Table = BaseType.extend({
   defaults: {
-    tags: [],
     data : {
       th: [],
       tr:[]
@@ -65,13 +75,13 @@ var TableView = Backbone.View.extend({
 
     $(el).append(this.el);
     $(this.el).html(str);
+    M.appendAttrs(this.model, this.el);
   }
 });
 
-var Image = Backbone.Model.extend({
+var Image = BaseType.extend({
 	defaults: {
-		src:"",
-		tags:[]
+		src: ""
 	},
 	initialize:function() {
 	}
@@ -88,14 +98,14 @@ var ImageView = Backbone.View.extend({
   render: function(el) {
     $(el).append(this.el);
     $(this.el).attr('src', this.model.get('src'));
+    M.appendAttrs(this.model, this.el);
   }
 });
 
 
-var Video = Backbone.Model.extend({
+var Video = BaseType.extend({
 	defaults: {
-		src:"",
-		tags:[]
+		src: ""
 	},
 	initialize:function() {
 	}
@@ -120,13 +130,13 @@ var VideoView = Backbone.View.extend({
   render: function(el) {
     $(el).append(this.el);
     $(this.el).attr('src', this.model.get('src'));
+    M.appendAttrs(this.model, this.el);
   }
 });
 
-var RSS = Backbone.Model.extend({
+var RSS = BaseType.extend({
 	defaults: {
-		src:"",
-		tags:[]
+		src: ""
 	},
 	initialize:function() {
 	}
@@ -143,6 +153,41 @@ var RSSView = Backbone.View.extend({
   }
 });
 
+var Plugin = BaseType.extend({
+  defaults: {
+    src: "",
+    data: {},
+    callback: ""
+  },
+  initialize: function() {
+    if(this.get('src').match('.js')) {
+      var script = document.createElement('script');
+      var callback = this.get('callback');
+      script.src = this.get('src');
+      document.body.appendChild(script);
+      script.onload = function() {
+        eval(callback);
+      };
+    }
+    else if(this.get('src').match('.css')) {
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = this.get('src');
+      link.type = 'text/css';
+      document.body.appendChild(link);
+    }
+  }
+});
+
+var PluginView = Backbone.View.extend({
+  initialize: function() {
+    return;
+  },
+  render: function(el) {
+    return;
+  }
+});
+
 var type_map;
 M.type_map = type_map = {
   model : {
@@ -150,14 +195,16 @@ M.type_map = type_map = {
     'image': Image,
     'video': Video,
     'rss': RSS,
-    'table': Table
+    'table': Table,
+    'plugin': Plugin
   },
   view: {
     'text': TextView,
     'image': ImageView,
     'video': VideoView,
     'rss': RSSView,
-    'table': TableView
+    'table': TableView,
+    'plugin': PluginView
   }
 };
 
@@ -179,6 +226,7 @@ var RSSs = Backbone.Collection.extend({model: RSS});
 var Page = Backbone.Model.extend({
   defaults: {
     name: "index",
+    title: "",
     children: [],
     content: []
   },
@@ -206,6 +254,7 @@ var PageView = Backbone.View.extend({
   },
   render: function() {
     $('#content-container').append(this.el);
+    $(this.el).append('<h3>'+this.model.get('title')+'</h3>');
     var self = this;
     _.each(this.model.get('content'), function(item) {
       var view = type_map.view[item.get('type')];
@@ -269,10 +318,7 @@ M.init = function() {
 
   // iterate through the JSON to intialize models and views
 	_.each(M.site_content, function(page) {
-    var new_page = new Page({
-      'name': page.name,
-      'children': page.children
-    });
+    var new_page = new Page(page);
     var contents = [];
 		_.each(page.content, function(content) {
       var Item = type_map.model[content.type];
@@ -311,6 +357,14 @@ M.simHeir = function() {
   });
 };
 
+
+// append attributes to elements from the model
+M.appendAttrs = function(model, el) {
+  _.each(model.get('attr'), function(val, key) {
+    $(el).attr(key, val);
+  });
+}
+
 //Helper method for making a list of id associated to tag
 	M.createTagList = function(item,x)
 	{
@@ -336,7 +390,7 @@ M.createNavigation = function() {
     var children = M.pages.get(child).get('children');
     var page = M.pages.get(child);
     var dropdown_template = _.template($('#nav-dropdown-template').html());
-    if(!children) {
+    if(_.isEmpty(children)) {
       li = '<li><a href="#/' + child + '">'+ M.humanReadable(child) +'</a></li>';
     }
     else {
