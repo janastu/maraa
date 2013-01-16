@@ -153,6 +153,10 @@ var RSSView = Backbone.View.extend({
   }
 });
 
+// Plugin model can be used to load dynamic components
+// to the website by loading external JS files.
+// Also the website can be styled by using external CSS files,
+// which can also be loaded via this plugin model.
 var Plugin = BaseType.extend({
   defaults: {
     src: "",
@@ -160,7 +164,7 @@ var Plugin = BaseType.extend({
     callback: ""
   },
   initialize: function() {
-    if(this.get('src').match('.js')) {
+    if(this.get('src').match(/\.js/)) {
       var script = document.createElement('script');
       var callback = this.get('callback');
       script.src = this.get('src');
@@ -169,7 +173,7 @@ var Plugin = BaseType.extend({
         eval(callback);
       };
     }
-    else if(this.get('src').match('.css')) {
+    else if(this.get('src').match(/\.css/)) {
       var link = document.createElement('link');
       link.rel = 'stylesheet';
       link.href = this.get('src');
@@ -303,6 +307,8 @@ var AppRouter = Backbone.Router.extend({
   },
   showPage: function(page) {
     $('.page').hide();
+    //news pages are rendered on the fly,
+    //as feeds have to be fetched.
     if(page === 'news') {
       M.rss_view.render();
     }
@@ -455,6 +461,7 @@ M.humanReadable = function(str) {
     str = '';
   }
   return '' + str.replace(/[-]+/g, ' ').replace(/[^\s]+/g, function(str) {
+  //return '' + str.replace(/[-]+/g, ' ').replace(/([A-Z])/g, function(s) { return ' '+s;}).replace(/[^\s]+/g, function(str) {
     return str.substr(0,1).toUpperCase() + str.substr(1).toLowerCase();
   });
 };

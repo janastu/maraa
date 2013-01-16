@@ -65,14 +65,25 @@
   {
     "name": "research",
     "children": [],
+    "title": "The map identifes the location and names of the various community radio stations in India. Clicking on them reveals more information about the radio station.",
     "content": [
       {
         "tags": ["community radio", "data", "research", "visualisation", "survey",
           "community radio stations", "cr stations", "pivot table"],
-        "type": "",
-        "data": ""
+        "type": "text",
+        "data": "",
+        "attr": {
+          "id": "map",
+          "style": "width: 1000px; height: 500px; margin-top:30px;"
+        }
+      },
+      {
+        "tags": [],
+        "type": "plugin",
+        "src": "js/leaflet.js",
+        "callback": "M.drawMap();"
       }
-    ]
+   ]
   },
   {
     "name": "resource-directory",
